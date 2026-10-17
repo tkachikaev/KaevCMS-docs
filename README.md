@@ -1,46 +1,54 @@
-# KaevCMS Documentation
+# KaevCMS — official website and docs
 
-Official bilingual (Russian / English) website and documentation for [KaevCMS](https://github.com/tkachikaev/KaevCMS), the open-source CMS for Lineage II servers.
+The bilingual documentation website for [KaevCMS](https://github.com/tkachikaev/KaevCMS), an MIT-licensed Laravel CMS for Lineage II game server websites.
 
-**Site:** https://tkachikaev.github.io/KaevCMS-docs/ (after enabling GitHub Pages)
+**Site:** https://tkachikaev.github.io/KaevCMS-docs/ (after GitHub Pages activation).
 
-This repository contains the documentation website only, not the CMS source code. Content is based on the published KaevCMS repository; always check the release notes for version-specific behavior.
+## Stack
 
-## Tech stack
+VitePress 1.6.4 · Vue 3 · Markdown · GitHub Actions · GitHub Pages.
 
-- VitePress 1.6.4
-- GitHub Pages
-- GitHub Actions
-- Markdown content, RU/EN
+## Run locally
 
-## Local development
-
-Requires Node.js 20 or later.
+Requires Node.js 20+.
 
 ~~~bash
 npm install
 npm run docs:dev
 npm run docs:build
+npm run docs:preview
 ~~~
 
-## Publishing
+## Deploy
 
-Set **Settings → Pages → Build and deployment → Source → GitHub Actions**. Pushes to `main` run the deployment workflow.
+1. Open repository **Settings → Pages**.
+2. Set **Build and deployment → Source → GitHub Actions**.
+3. Push to the `main` branch or run the workflow manually.
+4. Inspect the **Actions** tab for build/deployment status.
 
-## Content organization
+The VitePress base path is configured for /KaevCMS-docs/. If the repository name or public domain changes, update `base` and the favicon URL in `docs/.vitepress/config.mjs`.
 
-- `docs/index.md`: Russian homepage
-- `docs/en/index.md`: English homepage
-- `docs/guide/`: Russian articles
-- `docs/en/guide/`: English articles
-- `docs/.vitepress/`: site configuration and design
+## Structure
 
-When adding a feature article, update both language versions and their sidebar entries. Verify that steps match a **published** KaevCMS release. Do not publish credentials, application keys, real database details, or private diagnostic archives.
+~~~text
+docs/
+├── index.md                   # Russian homepage
+├── guide/                     # Russian articles
+├── en/index.md                # English homepage
+├── en/guide/                  # English articles
+├── .vitepress/config.mjs      # navigation, languages, links, search
+├── .vitepress/theme/          # design
+└── public/brand/              # SVG mark
+~~~
 
-## Sources
+For a new article, add both RU and EN copies and update their corresponding sidebar entries in config.mjs. Check that all claims correspond to **released** KaevCMS behavior. Source code currently used as the initial documentation baseline: 0.47.38. Later functionality must be reviewed against its own release.
 
-- [KaevCMS repository](https://github.com/tkachikaev/KaevCMS)
-- [KaevCMS Russian technical documentation](https://github.com/tkachikaev/KaevCMS/tree/main/docs/ru)
-- [KaevCMS English technical documentation](https://github.com/tkachikaev/KaevCMS/tree/main/docs/en)
+## Reference material
+
+- [Upstream Russian docs](https://github.com/tkachikaev/KaevCMS/tree/main/docs/ru)
+- [Upstream English docs](https://github.com/tkachikaev/KaevCMS/tree/main/docs/en)
 - [Releases](https://github.com/tkachikaev/KaevCMS/releases)
 - [Issues](https://github.com/tkachikaev/KaevCMS/issues)
+
+Avoid publishing .env, APP_KEY, actual credentials, private paths, or unredacted logs.
+

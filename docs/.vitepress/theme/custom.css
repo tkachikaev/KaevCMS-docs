@@ -1,0 +1,44 @@
+:root {
+  --vp-c-brand-1: #376fce;
+  --vp-c-brand-2: #5085d8;
+  --vp-c-brand-3: #679be9;
+  --vp-c-brand-soft: rgba(74, 123, 213, .11);
+  --vp-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(110deg,#286bc8 8%,#58a5e9 74%);
+  --vp-home-hero-image-background-image: radial-gradient(ellipse at 50% 50%, rgba(75,132,226,.28), transparent 66%);
+  --vp-home-hero-image-filter: blur(24px);
+}
+.dark {
+  --vp-c-bg: #0c1320;
+  --vp-c-bg-alt: #101a2c;
+  --vp-c-bg-soft: #111d30;
+  --vp-c-brand-1: #8bb7ff;
+  --vp-c-brand-2: #659ce9;
+  --vp-c-brand-3: #4179d4;
+  --vp-c-brand-soft: rgba(102, 157, 239, .13);
+  --vp-home-hero-name-background: linear-gradient(110deg,#a6c9ff 5%,#5a95f0 94%);
+}
+.VPNavBar .logo { border-radius: 12px; }
+.VPHero .name { letter-spacing: -.055em; }
+.VPHero .text { letter-spacing: -.045em; }
+.VPHome .VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.VPHome .VPFeature:hover {
+  transform: translateY(-3px);
+  border-color: var(--vp-c-brand-2);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, .08);
+}
+.VPHome .VPFeature .icon { border-radius: 13px; }
+.vp-doc h2 { margin-top: 38px; }
+.vp-doc .custom-block { border-radius: 12px; }
+.vp-doc table { width: 100%; display: table; }
+.VPHome .VPHero { padding-top: 64px; }
+@media (max-width: 640px) {
+  .VPHome .VPHero { padding-top: 30px; }
+  .vp-doc table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
+}
+

@@ -17,9 +17,9 @@
 
 ## Подробная документация
 
-- [Donations — пожертвования и обмен монет](https://github.com/tkachikaev/KaevCMS/blob/main/docs/ru/DONATIONS.md)
-- [Promo Codes — документация модуля](https://github.com/tkachikaev/KaevCMS/tree/main/modules/promo-codes)
-- [Daily Rewards — ежедневные награды](https://github.com/tkachikaev/KaevCMS/blob/main/docs/ru/DAILY_REWARDS.md)
-- [Support Tickets — техническая поддержка](https://github.com/tkachikaev/KaevCMS/blob/main/modules/support-tickets/docs/README.ru.md)
+- [Пожертвования — пополнение и обмен монет](https://github.com/tkachikaev/KaevCMS/blob/main/docs/ru/DONATIONS.md)
+- [Промокоды — документация модуля](https://github.com/tkachikaev/KaevCMS/tree/main/modules/promo-codes)
+- [Ежедневные награды — календарь подарков](https://github.com/tkachikaev/KaevCMS/blob/main/docs/ru/DAILY_REWARDS.md)
+- [Техническая поддержка — обращения игроков](https://github.com/tkachikaev/KaevCMS/blob/main/modules/support-tickets/docs/README.ru.md)
 
 [Скачать KaevCMS](https://github.com/tkachikaev/KaevCMS/releases) · [Исходный код модулей](https://github.com/tkachikaev/KaevCMS/tree/main/modules)

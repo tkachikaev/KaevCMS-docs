@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
+import GoldenParticles from './GoldenParticles.vue'
 
 const props = defineProps({
   lang: { type: String, default: 'ru' }
@@ -75,7 +76,9 @@ const releases = github + '/releases'
   <main class="kaev-home">
     <section class="kaev-home__hero" aria-labelledby="kaev-home-title">
       <div class="kaev-home__hero-image" aria-hidden="true"></div>
+      <img class="kaev-home__hero-image kaev-home__hero-image--night" :src="asset('/images/hero-dark-elf.png')" alt="" aria-hidden="true" width="1672" height="941" decoding="async" />
       <div class="kaev-home__hero-overlay" aria-hidden="true"></div>
+      <GoldenParticles />
       <div class="kaev-home__hero-content">
         <div class="kaev-home__intro">
           <p class="kaev-home__eyebrow"><span class="kaev-home__spark">✧</span> {{ content.eyebrow }} <span class="kaev-home__eyebrow-line" aria-hidden="true"></span></p>

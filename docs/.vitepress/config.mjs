@@ -13,8 +13,10 @@ const ruSidebar = [
   ] },
   { text: 'Работа с CMS', items: [
     { text: 'Игровые серверы', link: '/guide/game-servers' },
-    { text: 'Администрирование и модули', link: '/guide/administration' },
-    { text: 'Обновления', link: '/guide/updates' }
+    { text: 'Администрирование и модули', link: '/guide/administration' }
+  ] },
+  { text: 'Обновления', items: [
+    { text: 'Обновление KaevCMS', link: '/guide/updates' }
   ] },
   { text: 'Помощь', items: [
     { text: 'Решение проблем', link: '/guide/troubleshooting' },
@@ -33,8 +35,10 @@ const enSidebar = [
   ] },
   { text: 'Using KaevCMS', items: [
     { text: 'Game servers', link: '/en/guide/game-servers' },
-    { text: 'Administration and modules', link: '/en/guide/administration' },
-    { text: 'Updates', link: '/en/guide/updates' }
+    { text: 'Administration and modules', link: '/en/guide/administration' }
+  ] },
+  { text: 'Updates', items: [
+    { text: 'Updating KaevCMS', link: '/en/guide/updates' }
   ] },
   { text: 'Help', items: [
     { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
@@ -63,6 +67,7 @@ export default defineConfig({
         nav: [
           { text: 'Главная', link: '/' },
           { text: 'Документация', link: '/guide/getting-started' },
+          { text: 'Обновления', link: '/guide/updates' },
           { text: 'Решение проблем', link: '/guide/troubleshooting' },
           { text: 'Релизы ↗', link: source + '/releases' }
         ],
@@ -89,6 +94,7 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Documentation', link: '/en/guide/getting-started' },
+          { text: 'Updates', link: '/en/guide/updates' },
           { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
           { text: 'Releases ↗', link: source + '/releases' }
         ],

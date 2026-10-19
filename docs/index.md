@@ -6,7 +6,7 @@ hero:
   text: Управление Lineage II
   tagline: Открытая CMS для сайтов игровых серверов. Публичный сайт, кабинет игрока, администрирование и интеграция с игровыми базами — в одном проекте.
   image:
-    src: /brand/kaevcms-logo.avif
+    src: /brand/kaevcms-k.webp
     alt: KaevCMS
   actions:
     - theme: brand

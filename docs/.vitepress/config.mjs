@@ -63,7 +63,7 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#101827' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'KaevCMS' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/KaevCMS-docs/brand/favicon.png' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/KaevCMS-docs/brand/favicon-k.png' }]
   ],
   locales: {
     root: {
@@ -122,7 +122,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '/brand/kaevcms-logo.avif',
+    logo: '/brand/kaevcms-k.webp',
     siteTitle: 'KaevCMS',
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: source }]

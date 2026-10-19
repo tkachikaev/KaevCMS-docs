@@ -45,6 +45,8 @@
 
 /* KaevCMS silver emblem, original artwork with transparent background. */
 .VPNavBar .logo { border-radius: 0; object-fit: contain; }
+.VPNavBarTitle .logo { height: 34px; width: 34px; margin-right: 0; }
+.VPNavBarTitle .title { min-width: 44px; justify-content: center; }
 .VPHero .image-src { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 20px rgba(15,24,38,.10)); }
 
 .module-overview { margin: 26px 0 40px; }

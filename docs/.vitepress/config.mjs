@@ -122,8 +122,8 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '/brand/kaevcms-k.webp',
-    siteTitle: 'KaevCMS',
+    logo: { src: '/brand/kaevcms-k.webp', alt: 'KaevCMS' },
+    siteTitle: false,
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: source }]
   }

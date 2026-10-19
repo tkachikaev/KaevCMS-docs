@@ -82,7 +82,9 @@ const releases = github + '/releases'
       <div class="kaev-home__hero-content">
         <div class="kaev-home__intro">
           <p class="kaev-home__eyebrow"><span class="kaev-home__spark">✧</span> {{ content.eyebrow }} <span class="kaev-home__eyebrow-line" aria-hidden="true"></span></p>
-          <h1 id="kaev-home-title" class="kaev-home__brand">KaevCMS</h1>
+          <h1 id="kaev-home-title" class="kaev-home__brand">
+            <img class="kaev-home__brand-logo" :src="asset('/images/kaevcms-wordmark.webp')" alt="KaevCMS" width="920" height="184" decoding="async" />
+          </h1>
           <p class="kaev-home__headline">{{ content.heading }}</p>
           <p class="kaev-home__description">{{ content.description }}</p>
           <div class="kaev-home__actions">
@@ -112,7 +114,6 @@ const releases = github + '/releases'
             </div>
           </div>
         </div>
-        <img class="kaev-home__wordmark" :src="asset('/images/kaevcms-wordmark.webp')" alt="" aria-hidden="true" width="920" height="184" decoding="async" />
       </div>
     </section>
 

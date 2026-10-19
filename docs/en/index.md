@@ -6,7 +6,7 @@ hero:
   text: Lineage II management
   tagline: Open-source CMS for game server websites. A public site, player accounts, administration and game database integrations in one project.
   image:
-    src: /brand/kaevcms.svg
+    src: /brand/kaevcms-logo.avif
     alt: KaevCMS
   actions:
     - theme: brand
@@ -23,8 +23,8 @@ features:
   - icon: 🧩
     title: Modular and configurable
     details: Extension modules, public and account themes, and localized content.
-    link: /en/guide/administration
-    linkText: Learn more
+    link: /en/guide/modules
+    linkText: Explore modules
   - icon: 🎮
     title: Lineage II integration
     details: Separate LoginServer and GameServer connections, drivers and external database diagnostics.

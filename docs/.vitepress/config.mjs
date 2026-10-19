@@ -13,7 +13,10 @@ const ruSidebar = [
   ] },
   { text: 'Работа с CMS', items: [
     { text: 'Игровые серверы', link: '/guide/game-servers' },
-    { text: 'Администрирование и модули', link: '/guide/administration' }
+    { text: 'Администрирование', link: '/guide/administration' }
+  ] },
+  { text: 'Модули', items: [
+    { text: 'Каталог модулей', link: '/guide/modules' }
   ] },
   { text: 'Обновления', items: [
     { text: 'Обновление KaevCMS', link: '/guide/updates' }
@@ -35,7 +38,10 @@ const enSidebar = [
   ] },
   { text: 'Using KaevCMS', items: [
     { text: 'Game servers', link: '/en/guide/game-servers' },
-    { text: 'Administration and modules', link: '/en/guide/administration' }
+    { text: 'Administration', link: '/en/guide/administration' }
+  ] },
+  { text: 'Modules', items: [
+    { text: 'Module catalog', link: '/en/guide/modules' }
   ] },
   { text: 'Updates', items: [
     { text: 'Updating KaevCMS', link: '/en/guide/updates' }
@@ -57,7 +63,7 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#101827' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'KaevCMS' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/KaevCMS-docs/brand/kaevcms.svg' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/KaevCMS-docs/brand/favicon.png' }]
   ],
   locales: {
     root: {
@@ -67,6 +73,7 @@ export default defineConfig({
         nav: [
           { text: 'Главная', link: '/' },
           { text: 'Документация', link: '/guide/getting-started' },
+          { text: 'Модули', link: '/guide/modules' },
           { text: 'Обновления', link: '/guide/updates' },
           { text: 'Решение проблем', link: '/guide/troubleshooting' },
           { text: 'Релизы ↗', link: source + '/releases' }
@@ -94,6 +101,7 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Documentation', link: '/en/guide/getting-started' },
+          { text: 'Modules', link: '/en/guide/modules' },
           { text: 'Updates', link: '/en/guide/updates' },
           { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
           { text: 'Releases ↗', link: source + '/releases' }
@@ -114,7 +122,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '/brand/kaevcms.svg',
+    logo: '/brand/kaevcms-logo.avif',
     siteTitle: 'KaevCMS',
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: source }]

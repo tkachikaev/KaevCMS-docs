@@ -1,4 +1,4 @@
-# Administration and modules
+# Administration
 
 ## First configuration
 
@@ -17,9 +17,7 @@ Available sections depend on the installed release and current admin permissions
 
 ## Modules
 
-The published repository contains **Daily Rewards**, an optional monthly rewards calendar. It is disabled after a clean installation and can be enabled by the owner. Calendars are scoped to servers and months and track per-game-account claims.
-
-Install extension packages only from trusted sources and keep backups before module updates or migrations.
+See the separate **[Module catalog](/en/guide/modules)** for module descriptions, versions and pricing.
 
 ## Diagnostics
 

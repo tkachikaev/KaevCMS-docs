@@ -190,32 +190,32 @@ body:has(.kaev-home) .VPContent { padding-bottom: 0; }
 .kaev-home a:focus-visible { outline: 3px solid #b68a47; outline-offset: 4px; }
 
 /* Moonlit palette follows the supplied night elf artwork. */
-.dark .kaev-home { --kh-ink: #f0edf7; --kh-muted: #c1bdcf; --kh-gold: #c3a2ed; background: #0f101b; }
-.dark .kaev-home__hero { background: #0f101b; }
+.dark .kaev-home { --kh-ink: #f0edf7; --kh-muted: #c1bdcf; --kh-gold: #c3a2ed; background: #0d0c10; }
+.dark .kaev-home__hero { background: #0d0c10; }
 .dark .kaev-home__hero-image:not(.kaev-home__hero-image--night) { opacity: 0; }
 .dark .kaev-home__hero-image--night { opacity: 1; }
-.dark .kaev-home__hero-overlay { background: linear-gradient(90deg,rgba(15,16,27,.88),rgba(15,16,27,.68) 32%,rgba(15,16,27,.16) 63%,transparent 85%),linear-gradient(0deg,#0f101b,transparent 30%); }
+.dark .kaev-home__hero-overlay { background: linear-gradient(90deg,rgba(13,12,16,.88),rgba(13,12,16,.68) 32%,rgba(13,12,16,.16) 63%,transparent 85%),linear-gradient(0deg,#0d0c10,transparent 30%); }
 .dark .kaev-home__eyebrow, .dark .kaev-home__strength { color: #d2c9df; }
 .dark .kaev-home__eyebrow-line { background: linear-gradient(90deg,#bc9fda,transparent); }
 .dark .kaev-home__brand-logo { filter: sepia(.22) hue-rotate(215deg) saturate(.75) brightness(1.12) drop-shadow(0 0 14px rgba(185,151,229,.3)); }
 .dark .kaev-home__button--primary { color: #241831; background: linear-gradient(145deg,#e8dcf5,#c4a8e1 48%,#a27cc4); border-color: #c4a8e1; box-shadow: 0 8px 30px rgba(161,111,219,.27),inset 0 1px rgba(255,255,255,.4); }
 .dark .kaev-home__button--primary:hover { color: #1b1127; box-shadow: 0 10px 36px rgba(179,133,237,.44); }
-.dark .kaev-home__button--secondary { background: rgba(29,25,44,.65); color: #eee8f7; border-color: rgba(198,175,230,.27); }
+.dark .kaev-home__button--secondary { background: rgba(27,23,32,.65); color: #eee8f7; border-color: rgba(198,175,230,.27); }
 .dark .kaev-home__button--secondary:hover { background: #332741; color: white; }
 .dark .kaev-home__strength-icon, .dark .kaev-home__feature-icon { color: #cfb0ef; background: rgba(166,122,209,.12); }
-.dark .kaev-home__feature { background: #181523; border-color: #352b44; box-shadow: 0 8px 32px rgba(0,0,0,.15); }
+.dark .kaev-home__feature { background: #17141c; border-color: #352b44; box-shadow: 0 8px 32px rgba(0,0,0,.15); }
 .dark .kaev-home__feature::before { background-image: url('/KaevCMS-docs/images/hero-dark-elf.png'); opacity: .3; filter: saturate(.8); }
-.dark .kaev-home__feature::after { background: linear-gradient(90deg,rgba(24,21,35,.98),rgba(24,21,35,.67)); }
+.dark .kaev-home__feature::after { background: linear-gradient(90deg,rgba(23,20,28,.98),rgba(23,20,28,.67)); }
 .dark .kaev-home__feature:hover { border-color: #8f6eb2; box-shadow: 0 12px 34px rgba(143,94,194,.12); }
 .dark .kaev-home__feature p { color: #bfb6cc; }
 .dark .kaev-home__feature-link, .dark .kaev-home__footnote nav a, .dark .kaev-home__more-card > span:last-child { color: #cfb0ef; }
 .dark .kaev-home__feature-link:hover { color: #ecdaff; }
-.dark .kaev-home__more-card { background: #181523; border-color: #352b44; }
+.dark .kaev-home__more-card { background: #17141c; border-color: #352b44; }
 .dark .kaev-home__more-card:hover { border-color: #9874bc; }
 .dark .kaev-home__footnote { border-color: #352b44; }
 .dark .kaev-home__footnote p { color: #aca1bc; }
-html.dark body:has(.kaev-home) { --vp-c-bg: #0f101b; --vp-c-bg-alt: #14111e; --vp-c-bg-soft: #201a2b; --vp-c-brand-1: #cfb0ef; --vp-c-brand-2: #e2c9fa; --vp-c-brand-3: #a27cc4; --vp-c-brand-soft: rgba(166,122,209,.15); }
-html.dark body:has(.kaev-home) .VPNavBar::before { background: linear-gradient(180deg,rgba(19,16,30,.96),rgba(23,18,35,.78) 60%,transparent); }
+html.dark body:has(.kaev-home) { --vp-c-brand-1: #cfb0ef; --vp-c-brand-2: #e2c9fa; --vp-c-brand-3: #8555b7; --vp-c-brand-soft: rgba(166,122,209,.13); }
+html.dark body:has(.kaev-home) .VPNavBar::before { background: linear-gradient(180deg,rgba(13,12,16,.96),rgba(20,17,25,.78) 60%,transparent); }
 
 @media (max-width: 1130px) {
   .kaev-home__hero-content { padding: 64px 34px 56px; }
@@ -232,7 +232,7 @@ html.dark body:has(.kaev-home) .VPNavBar::before { background: linear-gradient(1
   .kaev-home__feature-grid { grid-template-columns: 1fr; }
   .kaev-home__feature { min-height: 175px; }
   .kaev-home__more-grid { grid-template-columns: 1fr; }
-  .dark .kaev-home__hero-overlay { background: linear-gradient(90deg,rgba(15,16,27,.91),rgba(15,16,27,.7) 50%,rgba(15,16,27,.12)),linear-gradient(0deg,#0f101b,transparent 30%); }
+  .dark .kaev-home__hero-overlay { background: linear-gradient(90deg,rgba(13,12,16,.91),rgba(13,12,16,.7) 50%,rgba(13,12,16,.12)),linear-gradient(0deg,#0d0c10,transparent 30%); }
 }
 @media (max-width: 640px) {
   .kaev-home__hero { min-height: auto; }
@@ -253,7 +253,7 @@ html.dark body:has(.kaev-home) .VPNavBar::before { background: linear-gradient(1
   .kaev-home__feature { min-height: 185px; padding: 22px; }
   .kaev-home__more { padding: 36px 20px 54px; }
   .dark .kaev-home__hero-image--night { object-position: 78% top; }
-  .dark .kaev-home__hero-overlay { background: linear-gradient(180deg,transparent 190px,rgba(15,16,27,.25) 255px,#0f101b 365px); }
+  .dark .kaev-home__hero-overlay { background: linear-gradient(180deg,transparent 190px,rgba(13,12,16,.25) 255px,#0d0c10 365px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .kaev-home__button, .kaev-home__feature, .kaev-home__more-card { transition: none; }

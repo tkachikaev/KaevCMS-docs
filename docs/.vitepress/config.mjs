@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { releases } from './releases.generated.mjs'
 
 const source = 'https://github.com/tkachikaev/KaevCMS'
 const docsRepo = 'https://github.com/tkachikaev/KaevCMS-docs'
+const ruReleaseSidebar=[{text:'Версии KaevCMS',items:[{text:'Все релизы',link:'/releases/'},...releases.map(r=>({text:r.tag,link:'/releases/'+r.slug}))]}]
+const enReleaseSidebar=[{text:'KaevCMS versions',items:[{text:'All releases',link:'/en/releases/'},...releases.map(r=>({text:r.tag,link:'/en/releases/'+r.slug}))]}]
 const ruSidebar = [
   { text: 'Начало', items: [
     { text: 'Обзор KaevCMS', link: '/guide/overview' },
@@ -76,9 +79,9 @@ export default defineConfig({
           { text: 'Модули', link: '/guide/modules' },
           { text: 'Обновления', link: '/guide/updates' },
           { text: 'Решение проблем', link: '/guide/troubleshooting' },
-          { text: 'Релизы ↗', link: source + '/releases' }
+          { text: 'Релизы', link: '/releases/' }
         ],
-        sidebar: ruSidebar,
+        sidebar: {'/releases/':ruReleaseSidebar,'/':ruSidebar},
         editLink: { pattern: docsRepo + '/edit/main/docs/:path', text: 'Предложить исправление' },
         docFooter: { prev: 'Назад', next: 'Далее' },
         outline: { label: 'На этой странице' },
@@ -104,9 +107,9 @@ export default defineConfig({
           { text: 'Modules', link: '/en/guide/modules' },
           { text: 'Updates', link: '/en/guide/updates' },
           { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
-          { text: 'Releases ↗', link: source + '/releases' }
+          { text: 'Releases', link: '/en/releases/' }
         ],
-        sidebar: enSidebar,
+        sidebar: {'/en/releases/':enReleaseSidebar,'/en/':enSidebar},
         editLink: { pattern: docsRepo + '/edit/main/docs/:path', text: 'Suggest an edit' },
         docFooter: { prev: 'Previous', next: 'Next' },
         outline: { label: 'On this page' },

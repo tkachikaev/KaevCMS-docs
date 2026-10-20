@@ -1,0 +1,16 @@
+
+.kaev-release-catalog{max-width:1100px;margin:0 auto 72px}
+.kaev-release-intro{margin:0 0 32px}
+.kaev-release-kicker{font-size:12px;color:#bd995d;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+.vp-doc .kaev-release-intro h1{border:0;padding:0;margin:10px 0 12px;letter-spacing:-.04em}
+.vp-doc .kaev-release-intro p{max-width:720px;color:var(--vp-c-text-2);line-height:1.7}
+.kaev-release-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.vp-doc a.kaev-release-tile{display:flex;flex-direction:column;gap:12px;min-height:205px;padding:24px;background:var(--vp-c-bg-soft);border:1px solid var(--vp-c-divider);border-radius:16px;color:var(--vp-c-text-1);text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.vp-doc a.kaev-release-tile:hover{transform:translateY(-2px);border-color:var(--vp-c-brand-1);box-shadow:0 14px 24px rgba(0,0,0,.06)}
+.kaev-release-tile--last{background:linear-gradient(135deg,rgba(194,151,82,.1),var(--vp-c-bg-soft))!important;border-color:rgba(191,146,78,.5)!important}
+.kaev-release-tile__label{font-size:12px;color:var(--vp-c-text-3)}
+.kaev-release-tile__title{font-size:clamp(21px,2.3vw,30px);letter-spacing:-.04em}
+.kaev-release-tile__desc{font-size:13px;color:var(--vp-c-text-2)}
+.kaev-release-tile__link{font-size:13px;color:var(--vp-c-brand-1);margin-top:auto;font-weight:700}
+.vp-doc .kaev-release-footer{margin-top:24px;font-size:13px}
+@media(max-width:700px){.kaev-release-grid{grid-template-columns:1fr}.vp-doc a.kaev-release-tile{padding:20px;min-height:180px}}

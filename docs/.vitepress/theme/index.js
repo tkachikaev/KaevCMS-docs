@@ -1,8 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
 import ModuleCatalog from './components/ModuleCatalog.vue'
+import ReleaseCatalog from './components/ReleaseCatalog.vue'
 import HomeLanding from './components/HomeLanding.vue'
 import ThemeLayout from './ThemeLayout.vue'
 import './custom.css'
+import './releases.css'
 import './home.css'
 
 export default {
@@ -10,6 +12,7 @@ export default {
   Layout: ThemeLayout,
   enhanceApp({ app }) {
     app.component('ModuleCatalog', ModuleCatalog)
+    app.component('ReleaseCatalog', ReleaseCatalog)
     app.component('HomeLanding', HomeLanding)
   }
 }

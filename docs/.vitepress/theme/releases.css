@@ -14,3 +14,8 @@
 .kaev-release-tile__link{font-size:13px;color:var(--vp-c-brand-1);margin-top:auto;font-weight:700}
 .vp-doc .kaev-release-footer{margin-top:24px;font-size:13px}
 @media(max-width:700px){.kaev-release-grid{grid-template-columns:1fr}.vp-doc a.kaev-release-tile{padding:20px;min-height:180px}}
+/* Match HomeLanding's gold/moonlit CTA accent. */
+.kaev-release-tile__link,
+.vp-doc .kaev-release-footer a { color: #956a29; }
+.dark .kaev-release-tile__link,
+.dark .vp-doc .kaev-release-footer a { color: #cfb0ef; }

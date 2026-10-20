@@ -105,3 +105,32 @@
   .module-card { padding: 17px; }
   .module-card__art { width: 80px; height: 80px; flex-basis: 80px; }
 }
+/* VitePress CTA buttons: same design tokens as the main KaevCMS landing. */
+.VPButton.brand {
+  background: linear-gradient(145deg,#edd8a6,#d6b370 48%,#bc914d);
+  border: 1px solid rgba(154,111,45,.32);
+  color: #382810;
+  box-shadow: 0 9px 20px rgba(151,108,43,.22);
+  border-radius: 13px;
+  transition: transform .17s ease, box-shadow .17s ease;
+}
+.VPButton.brand:hover {
+  background: linear-gradient(145deg,#edd8a6,#d6b370 48%,#bc914d);
+  border-color: rgba(154,111,45,.32);
+  color: #382810;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(151,108,43,.32);
+}
+.dark .VPButton.brand {
+  background: linear-gradient(145deg,#e8dcf5,#c4a8e1 48%,#a27cc4);
+  color: #241831;
+  border-color: #c4a8e1;
+  box-shadow: 0 8px 30px rgba(161,111,219,.27);
+}
+.dark .VPButton.brand:hover {
+  background: linear-gradient(145deg,#e8dcf5,#c4a8e1 48%,#a27cc4);
+  color: #241831;
+  border-color: #c4a8e1;
+  box-shadow: 0 10px 36px rgba(179,133,237,.44);
+}
+@media (prefers-reduced-motion: reduce) { .VPButton.brand { transition: none; } }

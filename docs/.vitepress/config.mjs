@@ -85,8 +85,8 @@ export default defineConfig({
           { text: 'Модули', link: '/guide/modules' },
           { text: 'Обновления', link: '/guide/updates' },
           { text: 'Решение проблем', link: '/guide/troubleshooting' },
-          { text: 'Релизы', link: '/releases/' },
-          { text: 'Ресурсы', link: '/resources/' }
+          { text: 'Ресурсы', link: '/resources/' },
+          { text: 'Релизы', link: '/releases/' }
         ],
         sidebar: {'/releases/':ruReleaseSidebar,'/':ruSidebar},
         editLink: { pattern: docsRepo + '/edit/main/docs/:path', text: 'Предложить исправление' },
@@ -114,8 +114,8 @@ export default defineConfig({
           { text: 'Modules', link: '/en/guide/modules' },
           { text: 'Updates', link: '/en/guide/updates' },
           { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
-          { text: 'Releases', link: '/en/releases/' },
-          { text: 'Resources', link: '/en/resources/' }
+          { text: 'Resources', link: '/en/resources/' },
+          { text: 'Releases', link: '/en/releases/' }
         ],
         sidebar: {'/en/releases/':enReleaseSidebar,'/en/':enSidebar},
         editLink: { pattern: docsRepo + '/edit/main/docs/:path', text: 'Suggest an edit' },

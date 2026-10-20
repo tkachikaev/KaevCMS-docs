@@ -121,6 +121,38 @@ Intermediate releases do not need to be installed one by one when the package su
 
 When a release changes Composer dependencies, deploy the full release and run `composer install` with the supplied `composer.lock`. Never run `composer update` on production.
 
+### If an update gets stuck: `kaevcms:update-recover`
+
+A server reboot, terminated process or VDS Update Agent failure can leave an update unfinished: the website remains in maintenance mode and subsequent updates are blocked. Connect to the server over SSH:
+
+```bash
+cd /var/www/kaevcms
+owner="$(stat -c '%U' artisan)"
+sudo -u "$owner" php artisan kaevcms:update-recover
+```
+
+Replace `/var/www/kaevcms` with the actual project directory. The `owner` variable identifies the owner of `artisan`. **Run recovery as the project file owner**, not `www-data`. A root-owned project must be recovered as `root`. Running under a different account is refused.
+
+The command detects the issue and **requests confirmation**:
+
+- **Update interrupted while applying** — restores database and files from a verified update backup, records the previous version, and lifts maintenance mode.
+- **Update Agent never started a pending request** — cancels the request and returns its package to the staged state, so it can be restarted or discarded from the admin panel.
+- **Nothing is stuck but maintenance mode is still active** — offers to bring the site back online.
+
+If several updates are stuck, it lists their UUIDs without selecting one. Provide the relevant identifier:
+
+```bash
+sudo -u "$owner" php artisan kaevcms:update-recover UUID
+```
+
+The `--yes` option skips interactive confirmation; use it only for reviewed automation. **Without `--yes`, a non-interactive invocation refuses to act.** If there is no verified backup or rollback fails, the site remains in maintenance mode. Inspect the update logs in `storage/logs` rather than manually bringing the site online after a failed rollback.
+
+::: warning Command availability
+This command was introduced in the KaevCMS source code by [commit `c443b62`](https://github.com/tkachikaev/KaevCMS/commit/c443b62) and **is not available in older installed releases**. Check using `php artisan list | grep kaevcms:update-recover`. This procedure is intended for a VDS with SSH access, not shared hosting without a terminal.
+:::
+
+[Upstream KaevCMS update documentation](https://github.com/tkachikaev/KaevCMS/blob/main/docs/en/UPDATES.md).
+
 ### After upgrading: queue worker
 
 Restart the worker after an update:

@@ -53,6 +53,10 @@ Check SMTP host, port, encryption and sender address. Send a test message. For q
 
 Check the installed version, target deployment type, manifest compatibility, checksum and available storage. Do not disable update validation.
 
+## Update stuck or website left in maintenance mode
+
+On a VDS, if an update is interrupted or the Update Agent request gets stuck, use **[the `kaevcms:update-recover` command](/en/guide/updates#if-an-update-gets-stuck-kaevcms-update-recover)**. It detects the situation and offers verified-backup recovery, cancellation of a request that never started, or lifting leftover maintenance mode. Run it **over SSH as the project owner**, only when the installed version includes [change `c443b62`](https://github.com/tkachikaev/KaevCMS/commit/c443b62).
+
 ## Need more help?
 
 Open a [GitHub Issue](https://github.com/tkachikaev/KaevCMS/issues) with the CMS version, environment, reproduction steps, expected result and **redacted** error details.

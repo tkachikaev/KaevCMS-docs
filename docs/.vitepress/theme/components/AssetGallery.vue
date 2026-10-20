@@ -34,16 +34,16 @@ const raceLabels={dark_elf:['Тёмные эльфы','Dark elves'],dwarf:['Гн
 const formatRace=r=>raceLabels[r]?.[isRu.value?0:1] || r.replaceAll('_',' ')
 const counts=computed(()=>[0,1,2].map(k=>files.value.filter(f=>f[0]===k).length))
 const filtered=computed(()=>{
- const q=query.value.trim().toLowerCase().replace(/\\s+/g,'_')
+ const q=query.value.trim().toLowerCase().split(' ').join('_')
  return files.value.filter(f=>f[0]===tab.value&&(!race.value||tab.value!==0||f[1].split('/')[3]===race.value)&&(!q||f[1].toLowerCase().includes(q)||f[1].split('/').pop().replace(/_/g,' ').toLowerCase().includes(q.replaceAll('_',' '))))
 })
 const shown=computed(()=>filtered.value.slice(0,limit.value))
 const src=(f)=>'https://raw.githubusercontent.com/tkachikaev/KaevCMS-image/'+commit.value+'/public/uploads/'+f[1].split('/').map(encodeURIComponent).join('/')
 const name=(f)=>{
  const p=f[1].split('/')
- if(f[0]===1)return (isRu.value?'Аватар ':'Avatar ')+p[p.length-1].replace(/\\.webp$/i,'')
- if(f[0]===0)return formatRace(p[3])+' · '+(p[4]==='male'?(isRu.value?'муж.':'male'):p[4]==='female'?(isRu.value?'жен.':'female'):p[4])+' · '+p[p.length-1].replace(/\\.webp$/i,'')
- return p[p.length-1].replace(/\\.webp$/i,'').replace(/_/g,' ')
+ if(f[0]===1)return (isRu.value?'Аватар ':'Avatar ')+p[p.length-1].slice(0,-5)
+ if(f[0]===0)return formatRace(p[3])+' · '+(p[4]==='male'?(isRu.value?'муж.':'male'):p[4]==='female'?(isRu.value?'жен.':'female'):p[4])+' · '+p[p.length-1].slice(0,-5)
+ return p[p.length-1].slice(0,-5).replace(/_/g,' ')
 }
 const size=f=>f[2]>=1048576?(f[2]/1048576).toFixed(1)+' MB':(f[2]/1024).toFixed(1)+' KB'
 function setTab(k){tab.value=k;race.value='';query.value='';limit.value=48;selected.value=null}

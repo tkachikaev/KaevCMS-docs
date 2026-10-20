@@ -23,7 +23,7 @@ async function run(){
     if(f.path.startsWith('public/uploads/game-assets/characters/common/'))cat=0
     else if(f.path.startsWith('public/uploads/account-avatars/'))cat=1
     else if(f.path.startsWith('public/uploads/game-assets/items/common/'))cat=2
-    return cat<0?null:[cat,f.path.replace(/^public\\/uploads\\//,''),f.size||0]
+    return cat<0?null:[cat,f.path.slice('public/uploads/'.length),f.size||0]
   }).filter(Boolean)
   if(!entries.length)throw new Error('No image assets found')
   const content=JSON.stringify({commit:ref.object.sha,entries})

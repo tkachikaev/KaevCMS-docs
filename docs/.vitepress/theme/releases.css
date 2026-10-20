@@ -2,6 +2,9 @@
 .kaev-release-catalog{max-width:1100px;margin:0 auto 72px}
 .kaev-release-intro{margin:0 0 32px}
 .kaev-release-kicker{font-size:12px;color:#bd995d;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+/* Dark appearance follows the moonlit/lilac palette of the KaevCMS homepage. */
+.dark .kaev-release-kicker { color: #c3a2ed; }
+
 .vp-doc .kaev-release-intro h1{border:0;padding:0;margin:10px 0 12px;letter-spacing:-.04em}
 .vp-doc .kaev-release-intro p{max-width:720px;color:var(--vp-c-text-2);line-height:1.7}
 .kaev-release-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}

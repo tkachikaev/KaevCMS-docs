@@ -3,8 +3,9 @@ import { releases } from './releases.generated.mjs'
 
 const source = 'https://github.com/tkachikaev/KaevCMS'
 const docsRepo = 'https://github.com/tkachikaev/KaevCMS-docs'
-const ruReleaseSidebar=[{text:'Версии KaevCMS',items:[{text:'Все релизы',link:'/releases/'},...releases.map(r=>({text:r.tag,link:'/releases/'+r.slug}))]}]
-const enReleaseSidebar=[{text:'KaevCMS versions',items:[{text:'All releases',link:'/en/releases/'},...releases.map(r=>({text:r.tag,link:'/en/releases/'+r.slug}))]}]
+const releaseLabel = r => `${r.tag} (${r.date.slice(8, 10)}.${r.date.slice(5, 7)}.${r.date.slice(0, 4)})`
+const ruReleaseSidebar=[{text:'Версии KaevCMS',items:[{text:'Все релизы',link:'/releases/'},...releases.map(r=>({text:releaseLabel(r),link:'/releases/'+r.slug}))]}]
+const enReleaseSidebar=[{text:'KaevCMS versions',items:[{text:'All releases',link:'/en/releases/'},...releases.map(r=>({text:releaseLabel(r),link:'/en/releases/'+r.slug}))]}]
 const ruSidebar = [
   { text: 'Начало', items: [
     { text: 'Обзор KaevCMS', link: '/guide/overview' },

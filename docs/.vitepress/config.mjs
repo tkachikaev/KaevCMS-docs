@@ -24,6 +24,9 @@ const ruSidebar = [
   { text: 'Обновления', items: [
     { text: 'Обновление KaevCMS', link: '/guide/updates' }
   ] },
+  { text: 'Ресурсы', items: [
+    { text: 'Галерея изображений', link: '/resources/' }
+  ] },
   { text: 'Помощь', items: [
     { text: 'Решение проблем', link: '/guide/troubleshooting' },
     { text: 'Частые вопросы', link: '/guide/faq' },
@@ -48,6 +51,9 @@ const enSidebar = [
   ] },
   { text: 'Updates', items: [
     { text: 'Updating KaevCMS', link: '/en/guide/updates' }
+  ] },
+  { text: 'Resources', items: [
+    { text: 'Image gallery', link: '/en/resources/' }
   ] },
   { text: 'Help', items: [
     { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
@@ -79,7 +85,8 @@ export default defineConfig({
           { text: 'Модули', link: '/guide/modules' },
           { text: 'Обновления', link: '/guide/updates' },
           { text: 'Решение проблем', link: '/guide/troubleshooting' },
-          { text: 'Релизы', link: '/releases/' }
+          { text: 'Релизы', link: '/releases/' },
+          { text: 'Ресурсы', link: '/resources/' }
         ],
         sidebar: {'/releases/':ruReleaseSidebar,'/':ruSidebar},
         editLink: { pattern: docsRepo + '/edit/main/docs/:path', text: 'Предложить исправление' },
@@ -107,7 +114,8 @@ export default defineConfig({
           { text: 'Modules', link: '/en/guide/modules' },
           { text: 'Updates', link: '/en/guide/updates' },
           { text: 'Troubleshooting', link: '/en/guide/troubleshooting' },
-          { text: 'Releases', link: '/en/releases/' }
+          { text: 'Releases', link: '/en/releases/' },
+          { text: 'Resources', link: '/en/resources/' }
         ],
         sidebar: {'/en/releases/':enReleaseSidebar,'/en/':enSidebar},
         editLink: { pattern: docsRepo + '/edit/main/docs/:path', text: 'Suggest an edit' },

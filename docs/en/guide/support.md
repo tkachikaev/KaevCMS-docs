@@ -6,6 +6,8 @@
 - **[Releases](https://github.com/tkachikaev/KaevCMS/releases)**: installation packages, release notes and available checksums.
 - **[Issues](https://github.com/tkachikaev/KaevCMS/issues)**: bug reports and support questions.
 - **[English technical documentation](https://github.com/tkachikaev/KaevCMS/tree/main/docs/en)**: detailed operational procedures.
+- **[Image gallery](/en/resources/)**: characters, avatars and item icons with previews and downloads.
+- **[KaevCMS-image collection](https://github.com/tkachikaev/KaevCMS-image)**: the complete source image repository.
 - **[Documentation website repository](https://github.com/tkachikaev/KaevCMS-docs)**: this site's source, translations and styling.
 
 ## Useful issue reports include

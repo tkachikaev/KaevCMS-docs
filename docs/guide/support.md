@@ -6,6 +6,8 @@
 - **[Релизы](https://github.com/tkachikaev/KaevCMS/releases)**: установочные архивы, изменения и доступные контрольные суммы.
 - **[Issues](https://github.com/tkachikaev/KaevCMS/issues)**: вопросы и сообщения об ошибках.
 - **[Русская техническая документация](https://github.com/tkachikaev/KaevCMS/tree/main/docs/ru)**: полные процедуры и эксплуатационные заметки.
+- **[Галерея изображений](/resources/)**: персонажи, аватары и иконки предметов с просмотром и ссылками на скачивание.
+- **[Коллекция KaevCMS-image](https://github.com/tkachikaev/KaevCMS-image)**: полный репозиторий игровых изображений.
 - **[Этот сайт на GitHub](https://github.com/tkachikaev/KaevCMS-docs)**: исходники справочника, переводы и оформление.
 
 ## Как написать полезный отчёт об ошибке

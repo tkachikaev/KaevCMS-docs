@@ -91,7 +91,7 @@ const iconSrc = item => withBase(`/modules/${item.id}.webp`)
           </div>
         </div>
         <p class="module-card__text">{{ localized(item).description }}</p>
-        <p v-if="item.id === 'donations'" class="module-card__docs"><a :href="withBase(ru ? '/guide/donations' : '/en/guide/donations')">{{ ru ? 'Документация Donations →' : 'Donations documentation →' }}</a></p>
+        <p class="module-card__docs"><a :href="withBase((ru ? '/guide/' : '/en/guide/') + item.id)">{{ ru ? 'Открыть документацию →' : 'Open documentation →' }}</a></p>
         <div class="module-sample">
           <div class="module-sample__label">{{ labels.example }}</div>
           <p class="module-sample__value">{{ localized(item).example }}</p>

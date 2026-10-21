@@ -1,6 +1,17 @@
 # KaevCMS modules
 
+**Choose a module in the left-hand tree.** Click its name for the overview or the arrow to expand its documentation. The cards below provide an alternative way to browse.
+
 Modules add features to your website and player accounts. These **four modules are included with KaevCMS**. Each module is free and available in the official repository.
+
+## Module documentation
+
+- **[Donations](/en/guide/donations)** — [Providers](/en/guide/donations-providers) → [YooMoney](/en/guide/donations-yoomoney), [coin exchange](/en/guide/donations-exchange).
+- **[Promo Codes](/en/guide/promo-codes)** — [create a code](/en/guide/promo-codes-create).
+- **[Daily Rewards](/en/guide/daily-rewards)** — [create a calendar](/en/guide/daily-rewards-calendar).
+- **[Support Tickets](/en/guide/support-tickets)** — [settings](/en/guide/support-tickets-settings) and [managing requests](/en/guide/support-tickets-requests).
+
+## Module catalog
 
 <ModuleCatalog lang="en" />
 
@@ -14,11 +25,6 @@ Modules add features to your website and player accounts. These **four modules a
 ::: info What does “Free” mean?
 No separate license fee is charged for these modules. External payment provider fees (for example, YooMoney transaction fees) may apply. Delivering items from Web Inventory to an in-game character depends on the game-side integration.
 :::
-
-## Setting up Donations
-
-- **[Donations — overview and features](/en/guide/donations)**
-- **[Providers → YooMoney: how to accept payments](/en/guide/donations-yoomoney)**
 
 ## Detailed documentation
 

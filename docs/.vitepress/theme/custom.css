@@ -166,3 +166,19 @@
   box-shadow: 0 10px 36px rgba(179,133,237,.44);
 }
 @media (prefers-reduced-motion: reduce) { .VPButton.brand { transition: none; } }
+
+/* KaevCMS mobile documentation sidebar touch scrolling.
+   VitePress locks the page behind its mobile drawer; allow the drawer itself
+   to scroll naturally, including inside expanded nested module sections. */
+@media (max-width: 959px) {
+  .Layout .VPSidebar.open {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
+  }
+  .Layout .VPSidebar.open .nav {
+    padding-bottom: max(24px, env(safe-area-inset-bottom, 0px));
+  }
+}

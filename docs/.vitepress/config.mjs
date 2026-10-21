@@ -67,7 +67,7 @@ const ruSidebar = [
         "collapsed": false,
         "items": [
           {
-            "text": "Donations",
+            "text": "Пожертвования",
             "link": "/guide/donations",
             "collapsed": true,
             "items": [

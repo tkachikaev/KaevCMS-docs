@@ -6,7 +6,7 @@
 
 ## Разделы модулей
 
-- **[Donations](/guide/donations)** — [Провайдеры](/guide/donations-providers) → [ЮMoney](/guide/donations-yoomoney), [перевод монет](/guide/donations-exchange).
+- **[Пожертвования](/guide/donations)** — [Провайдеры](/guide/donations-providers) → [ЮMoney](/guide/donations-yoomoney), [перевод монет](/guide/donations-exchange).
 - **[Промокоды](/guide/promo-codes)** — [как создать код](/guide/promo-codes-create).
 - **[Ежедневные награды](/guide/daily-rewards)** — [как создать календарь](/guide/daily-rewards-calendar).
 - **[Техподдержка](/guide/support-tickets)** — [настройки](/guide/support-tickets-settings) и [работа с обращениями](/guide/support-tickets-requests).

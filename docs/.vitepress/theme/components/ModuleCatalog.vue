@@ -11,7 +11,7 @@ const labels = computed(() => ru.value
 
 const modules = [
   {
-    id: 'donations', version: '1.16.0',
+    id: 'donations', version: '1.16.1',
     ru: {
       name: 'Пожертвования',
       description: 'Игрок пополняет баланс монет на сайте через ЮMoney. При включённом обмене монеты можно потратить на игровые предметы, которые попадут в веб-инвентарь.',
@@ -26,7 +26,7 @@ const modules = [
     }
   },
   {
-    id: 'promo-codes', version: '1.4.2',
+    id: 'promo-codes', version: '1.4.3',
     ru: {
       name: 'Промокоды',
       description: 'Создавайте промокоды с подарками для выбранного игрового сервера. Игрок активирует код и получает предметы в свой веб-инвентарь.',
@@ -41,7 +41,7 @@ const modules = [
     }
   },
   {
-    id: 'daily-rewards', version: '1.3.2',
+    id: 'daily-rewards', version: '1.3.3',
     ru: {
       name: 'Ежедневные награды',
       description: 'Календарь ежедневных подарков: настройте награды на каждый день месяца. Игрок забирает доступный подарок для своего игрового аккаунта.',
@@ -56,7 +56,7 @@ const modules = [
     }
   },
   {
-    id: 'support-tickets', version: '1.7.2',
+    id: 'support-tickets', version: '1.7.3',
     ru: {
       name: 'Техническая поддержка',
       description: 'Игрок пишет администрации прямо из личного кабинета. Сотрудники отвечают, меняют статус обращения и получают уведомления.',
@@ -91,6 +91,7 @@ const iconSrc = item => withBase(`/modules/${item.id}.webp`)
           </div>
         </div>
         <p class="module-card__text">{{ localized(item).description }}</p>
+        <p v-if="item.id === 'donations'" class="module-card__docs"><a :href="withBase(ru ? '/guide/donations' : '/en/guide/donations')">{{ ru ? 'Документация Donations →' : 'Donations documentation →' }}</a></p>
         <div class="module-sample">
           <div class="module-sample__label">{{ labels.example }}</div>
           <p class="module-sample__value">{{ localized(item).example }}</p>
@@ -125,3 +126,9 @@ const iconSrc = item => withBase(`/modules/${item.id}.webp`)
     </div>
   </section>
 </template>
+
+<style scoped>
+.module-card__docs { margin: 0.5rem 0 0; font-weight: 600; }
+.module-card__docs a { color: var(--vp-c-brand-1); }
+.module-card__docs a:hover { text-decoration: underline; }
+</style>

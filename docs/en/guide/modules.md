@@ -1,6 +1,6 @@
 # KaevCMS modules
 
-Modules add features to your website and player accounts. These **four modules are bundled with KaevCMS 0.50.14**. Each module is free and available in the official repository.
+Modules add features to your website and player accounts. These **four modules are included with KaevCMS**. Each module is free and available in the official repository.
 
 <ModuleCatalog lang="en" />
 
@@ -14,6 +14,11 @@ Modules add features to your website and player accounts. These **four modules a
 ::: info What does “Free” mean?
 No separate license fee is charged for these modules. External payment provider fees (for example, YooMoney transaction fees) may apply. Delivering items from Web Inventory to an in-game character depends on the game-side integration.
 :::
+
+## Setting up Donations
+
+- **[Donations — overview and features](/en/guide/donations)**
+- **[Providers → YooMoney: how to accept payments](/en/guide/donations-yoomoney)**
 
 ## Detailed documentation
 

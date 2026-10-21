@@ -21,7 +21,13 @@ const ruSidebar = [
     { text: 'Администрирование', link: '/guide/administration' }
   ] },
   { text: 'Модули', items: [
-    { text: 'Каталог модулей', link: '/guide/modules' }
+    { text: 'Каталог модулей', link: '/guide/modules' },
+    { text: 'Donations', collapsed: false, items: [
+      { text: 'Обзор', link: '/guide/donations' },
+      { text: 'Провайдеры', collapsed: false, items: [
+        { text: 'ЮMoney', link: '/guide/donations-yoomoney' }
+      ] }
+    ] }
   ] },
   { text: 'Обновления', items: [
     { text: 'Обновление KaevCMS', link: '/guide/updates' }
@@ -50,7 +56,13 @@ const enSidebar = [
     { text: 'Administration', link: '/en/guide/administration' }
   ] },
   { text: 'Modules', items: [
-    { text: 'Module catalog', link: '/en/guide/modules' }
+    { text: 'Module catalog', link: '/en/guide/modules' },
+    { text: 'Donations', collapsed: false, items: [
+      { text: 'Overview', link: '/en/guide/donations' },
+      { text: 'Providers', collapsed: false, items: [
+        { text: 'YooMoney', link: '/en/guide/donations-yoomoney' }
+      ] }
+    ] }
   ] },
   { text: 'Updates', items: [
     { text: 'Updating KaevCMS', link: '/en/guide/updates' }

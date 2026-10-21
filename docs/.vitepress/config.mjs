@@ -17,6 +17,7 @@ const ruSidebar = [
   ] },
   { text: 'Работа с CMS', items: [
     { text: 'Игровые серверы', link: '/guide/game-servers' },
+    { text: 'Передача предметов в игру', link: '/guide/reward-delivery' },
     { text: 'Администрирование', link: '/guide/administration' }
   ] },
   { text: 'Модули', items: [
@@ -45,6 +46,7 @@ const enSidebar = [
   ] },
   { text: 'Using KaevCMS', items: [
     { text: 'Game servers', link: '/en/guide/game-servers' },
+    { text: 'Item delivery', link: '/en/guide/reward-delivery' },
     { text: 'Administration', link: '/en/guide/administration' }
   ] },
   { text: 'Modules', items: [

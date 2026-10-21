@@ -24,6 +24,10 @@ The published code includes the **L2J Mobius** family and a legacy LoginServer v
 Do not expose MySQL to the entire internet. Prefer a private network, firewall restrictions and dedicated database credentials.
 :::
 
+## Delivering items to the game
+
+To deliver Web Inventory rewards, **install `kaev_reward_queue` into the GameServer database and configure a GameServer-side consumer**. See **[Delivering items to the game](/en/guide/reward-delivery)** for step-by-step instructions.
+
 ## Feature availability
 
 Item names and icons, rankings, web inventory, rewards and character rescue depend on tables, drivers and sometimes external game-side handlers. A reward marked queued does **not** prove an item has been delivered in-game.

@@ -9,7 +9,7 @@ Modules add features to your website and player accounts. These **four modules a
 1. Sign in to the administration panel as the site owner.
 2. Open **Modules**.
 3. Select a module, enable it and adjust its settings.
-4. For item rewards and promo codes, configure the game server and Web Inventory first.
+4. For item rewards and promo codes, configure the game server and Web Inventory first. For actual delivery to characters, follow **[Delivering items to the game](/en/guide/reward-delivery)**.
 
 ::: info What does “Free” mean?
 No separate license fee is charged for these modules. External payment provider fees (for example, YooMoney transaction fees) may apply. Delivering items from Web Inventory to an in-game character depends on the game-side integration.

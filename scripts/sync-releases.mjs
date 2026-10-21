@@ -10,9 +10,19 @@ function generate(raw){
   const p=d.find(m=>lang==="ru"?/русск|🇷🇺/i.test(clean(m[1])):/english|🇬🇧/i.test(clean(m[1])));
   return clean(p?p[2]:body)||(lang==="ru"?"Описание отсутствует.":"No release notes available.");
  };
+ // The GitHub release preamble can contain critical update instructions outside <details>.
+ // Preserve those warnings per language; they must not disappear from our docs.
+ const notices=(body,lang)=>{
+  const preamble=String(body||"").split(/<details\b/i)[0];
+  return preamble.split(/\r?\n/)
+   .map(line=>line.trim().replace(/^>\s*/,""))
+   .filter(line=>line.includes("⚠️"))
+   .filter(line=>lang==="ru"?/[А-Яа-яЁё]/.test(line):!/[А-Яа-яЁё]/.test(line))
+   .join("\n\n");
+ };
  const versions=raw.filter(r=>!r.draft&&r.published_at&&/^[a-zA-Z0-9][a-zA-Z0-9._-]{0,90}$/.test(r.tag_name||"")&&!r.tag_name.includes("..")&&String(r.html_url||"").startsWith(prefix))
  .sort((a,b)=>new Date(b.published_at)-new Date(a.published_at))
- .map(r=>({tag:r.tag_name,slug:"v-"+r.tag_name,date:r.published_at.slice(0,10),prerelease:!!r.prerelease,url:r.html_url,ru:notes(r.body,"ru"),en:notes(r.body,"en"),
+ .map(r=>({tag:r.tag_name,slug:"v-"+r.tag_name,date:r.published_at.slice(0,10),prerelease:!!r.prerelease,url:r.html_url,ru:notes(r.body,"ru"),en:notes(r.body,"en"),ruNotice:notices(r.body,"ru"),enNotice:notices(r.body,"en"),
  assets:(r.assets||[]).filter(a=>String(a.browser_download_url||"").startsWith(prefix+"download/")).map(a=>({name:String(a.name||"").replace(/[|\r\n]/g," "),url:a.browser_download_url,size:a.size||0}))}));
  if(!versions.length)throw new Error("No public GitHub releases");
  const files={};
@@ -28,6 +38,7 @@ function generate(raw){
    "# KaevCMS "+r.tag,"",
    "**"+(ru?"Опубликовано":"Published")+":** "+r.date+" · **"+(ru?"Тип":"Type")+":** "+(r.prerelease?(ru?"Предварительная версия":"Pre-release"):(ru?"Стабильный релиз":"Stable release")),"",
    "["+(ru?"Оригинал на GitHub ↗":"Original release on GitHub ↗")+"]("+r.url+")","",
+   ...((ru?r.ruNotice:r.enNotice) ? ["::: warning "+(ru?"Важно перед обновлением":"Important update information"),"",ru?r.ruNotice:r.enNotice,"",":::",""] : []),
    "## "+(ru?"Что нового":"What's new"),"",ru?r.ru:r.en,"",
    "## "+(ru?"Файлы для скачивания":"Download files"),"",fileTable,"",
    "::: warning "+(ru?"Перед установкой":"Before installation"),ru?"Проверяйте совместимость версий и делайте резервную копию. Полные архивы и обновления не взаимозаменяемы.":"Check version compatibility and keep a backup. Full installations and update packages are different.",":::","",

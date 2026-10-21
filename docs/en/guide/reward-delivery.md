@@ -33,4 +33,28 @@ The CMS **Transferred** status means the queue entry was written; **it does not 
 - **Unavailable** — verify the GameServer database connection and account permissions. The CMS needs read and write access to the queue.
 - **Item not received in-game** — inspect the GameServer consumer. Installing the table does not deliver items by itself.
 
+## `kaev_reward_queue` table fields
+
+| Field | Purpose |
+| --- | --- |
+| `id` | Unique queue row ID. |
+| `request_uuid` | Shared UUID of a single transfer operation. |
+| `line_number` | Item's position within the transfer operation. |
+| `game_server_id` | GameServer ID in KaevCMS. |
+| `source` | Transfer source (usually `web_inventory`). |
+| `cms_user_id` | User ID in KaevCMS. |
+| `account_name` | Game account login. |
+| `character_id` | ID of the target in-game character. |
+| `character_name` | Target character name. |
+| `item_id` | Game item ID. |
+| `amount` | Quantity of the item. |
+| `status` | Row status: `pending`, `processing`, `delivered`, or `failed`. |
+| `attempts` | Number of delivery attempts by the consumer. |
+| `error_message` | Consumer error message, if any. |
+| `created_at` | Date and time the row was created. |
+| `processing_started_at` | When the consumer started processing. |
+| `processed_at` | When processing finished or failed. |
+
+**Important:** KaevCMS creates each row with the `pending` status. The **GameServer consumer**, not the CMS, is responsible for subsequent statuses and processing fields.
+
 [For developers: queue contract, statuses and SQL examples](https://github.com/tkachikaev/KaevCMS/tree/main/integrations/reward-queue).

@@ -2,6 +2,7 @@
 import { nextTick, provide } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import LanguageSwitcher from './components/LanguageSwitcher.vue'
 
 const { isDark } = useData()
 let switching = false
@@ -46,5 +47,9 @@ provide('toggle-appearance', async (event) => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #nav-bar-content-after>
+      <LanguageSwitcher />
+    </template>
+  </DefaultTheme.Layout>
 </template>

@@ -182,3 +182,9 @@
     padding-bottom: max(24px, env(safe-area-inset-bottom, 0px));
   }
 }
+
+/* RU / EN is now always visible in the header. Avoid duplicate VitePress
+   language dropdowns in the desktop navbar and mobile hamburger screen. */
+.VPNavBar .VPNavBarTranslations { display: none !important; }
+.VPNavBar .VPNavBarExtra .group.translations { display: none !important; }
+.VPNavScreen .VPNavScreenTranslations { display: none !important; }

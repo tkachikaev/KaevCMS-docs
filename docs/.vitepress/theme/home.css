@@ -156,6 +156,35 @@
 .kaev-home__feature-link { color: #926326; margin-top: auto; font-size: 14px; font-weight: 680; }
 .kaev-home__feature-link:hover { color: #68451c; }
 .kaev-home__feature-link span { padding-left: 6px; font-size: 17px; }
+
+/* A compact, version-independent technology overview between features and help links. */
+.kaev-home__technology { max-width: 1440px; margin: 0 auto; padding: 0 48px 24px; }
+.kaev-home__technology-panel {
+  padding: 25px 28px 27px;
+  border: 1px solid rgba(153,163,179,.22);
+  border-radius: 18px;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 8px 28px rgba(59,75,103,.035);
+}
+.kaev-home__technology-intro { margin-bottom: 20px; }
+.kaev-home__technology-intro h2 {
+  margin: 0 0 7px;
+  font-size: clamp(21px,2vw,26px);
+  font-weight: 740;
+  line-height: 1.3;
+  letter-spacing: -.03em;
+  color: var(--kh-ink);
+}
+.kaev-home__technology-intro p { margin: 0; max-width: 850px; color: var(--kh-muted); font-size: 14px; line-height: 1.6; }
+.kaev-home__technology-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.kaev-home__technology-item {
+  display: flex; flex-direction: column; justify-content: center; gap: 7px;
+  min-width: 0; min-height: 90px; padding: 17px 18px;
+  border: 1px solid rgba(170,155,135,.2);
+  border-radius: 13px; background: #faf8f4;
+}
+.kaev-home__technology-item strong { color: #615038; font-size: 16px; font-weight: 750; line-height: 1.3; }
+.kaev-home__technology-item span { color: #737077; font-size: 12px; line-height: 1.4; }
 .kaev-home__more { max-width: 1344px; padding: 48px 48px 88px; margin: 0 auto; }
 .kaev-home__more-heading h2 { font-size: clamp(25px,2.55vw,37px); letter-spacing: -.035em; margin: 0 0 8px; line-height: 1.3; }
 .kaev-home__more-heading p { margin: 0; font-size: 16px; color: var(--kh-muted); line-height: 1.6; }
@@ -210,6 +239,11 @@ body:has(.kaev-home) .VPContent { padding-bottom: 0; }
 .dark .kaev-home__feature p { color: #bfb6cc; }
 .dark .kaev-home__feature-link, .dark .kaev-home__footnote nav a, .dark .kaev-home__more-card > span:last-child { color: #cfb0ef; }
 .dark .kaev-home__feature-link:hover { color: #ecdaff; }
+
+.dark .kaev-home__technology-panel { background: #17141c; border-color: #352b44; box-shadow: 0 8px 28px rgba(0,0,0,.1); }
+.dark .kaev-home__technology-item { background: #211b29; border-color: #3b304a; }
+.dark .kaev-home__technology-item strong { color: #e0c8f8; }
+.dark .kaev-home__technology-item span { color: #b9acc9; }
 .dark .kaev-home__more-card { background: #17141c; border-color: #352b44; }
 .dark .kaev-home__more-card:hover { border-color: #9874bc; }
 .dark .kaev-home__footnote { border-color: #352b44; }
@@ -222,6 +256,8 @@ html.dark body:has(.kaev-home) .VPNavBar::before { background: linear-gradient(1
   .kaev-home__hero { min-height: 620px; }
   .kaev-home__intro { max-width: 630px; }
   .kaev-home__features { padding-inline: 34px; }
+  .kaev-home__technology { padding-inline: 34px; }
+  .kaev-home__technology-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .kaev-home__more { padding-inline: 34px; }
 }
 @media (max-width: 880px) {
@@ -250,6 +286,12 @@ html.dark body:has(.kaev-home) .VPNavBar::before { background: linear-gradient(1
   .kaev-home__strengths { gap: 12px; margin-top: 23px; }
   .kaev-home__strength { font-size: 11px; flex: 1 1 130px; }
   .kaev-home__features { margin-top: 0; padding: 0 16px 24px; }
+  .kaev-home__technology { padding: 0 16px 18px; }
+  .kaev-home__technology-panel { padding: 21px 16px; }
+  .kaev-home__technology-grid { gap: 8px; }
+  .kaev-home__technology-item { min-height: 82px; padding: 13px 11px; }
+  .kaev-home__technology-item strong { font-size: 14px; }
+  .kaev-home__technology-item span { font-size: 11px; }
   .kaev-home__feature { min-height: 185px; padding: 22px; }
   .kaev-home__more { padding: 36px 20px 54px; }
   .dark .kaev-home__hero-image--night { object-position: 78% top; }

@@ -27,6 +27,14 @@ const content = computed(() => isEnglish.value ? {
     { icon: 'gamepad', title: 'Lineage II integration', description: 'Separate LoginServer and GameServer connections, compatibility drivers and database diagnostics.', action: 'Connect a server', href: '/en/guide/game-servers', artwork: 'game' },
     { icon: 'person', title: 'Player account area', description: 'Game accounts, characters, Web Inventory and other build-dependent features.', action: 'Explore features', href: '/en/guide/overview', artwork: 'account' }
   ],
+  techTitle: 'Built on proven technologies',
+  techDescription: 'A modern foundation for a Lineage II website, compatible with VPS and shared hosting.',
+  tech: [
+    { name: 'PHP 8.3+', detail: 'Server-side runtime' },
+    { name: 'Laravel', detail: 'Application framework' },
+    { name: 'Livewire', detail: 'Interactive interfaces' },
+    { name: 'MySQL / MariaDB', detail: 'Database engine' }
+  ],
   moreTitle: 'Everything for your server website',
   moreDescription: 'From the first installation to everyday administration — reference materials in one place.',
   more: [
@@ -54,6 +62,14 @@ const content = computed(() => isEnglish.value ? {
     { icon: 'puzzle', title: 'Модули и настройка', description: 'Расширяемая система модулей, оформление публичного сайта и личного кабинета, локализация.', action: 'Смотреть все модули', href: '/guide/modules', artwork: 'modules' },
     { icon: 'gamepad', title: 'Подключение Lineage II', description: 'Раздельные подключения LoginServer и GameServer, поддержка драйверов и диагностика игровых баз.', action: 'Подключить сервер', href: '/guide/game-servers', artwork: 'game' },
     { icon: 'person', title: 'Личный кабинет игрока', description: 'Игровые аккаунты, персонажи, веб-инвентарь и другие функции, доступные с учётом сборки сервера.', action: 'Возможности', href: '/guide/overview', artwork: 'account' }
+  ],
+  techTitle: 'Технологии KaevCMS',
+  techDescription: 'Современный технологический стек для сайта Lineage II. Подходит для VDS и обычного виртуального хостинга.',
+  tech: [
+    { name: 'PHP 8.3+', detail: 'Серверная платформа' },
+    { name: 'Laravel', detail: 'Основа CMS' },
+    { name: 'Livewire', detail: 'Интерактивные интерфейсы' },
+    { name: 'MySQL / MariaDB', detail: 'База данных' }
   ],
   moreTitle: 'Всё для сайта игрового сервера',
   moreDescription: 'От первой установки до ежедневного администрирования — инструкции в одном месте.',
@@ -129,6 +145,21 @@ const releases = github + '/releases'
           <p>{{ feature.description }}</p>
           <a class="kaev-home__feature-link" :href="asset(feature.href)">{{ feature.action }} <span aria-hidden="true">→</span></a>
         </article>
+      </div>
+    </section>
+
+    <section class="kaev-home__technology" :aria-label="content.techTitle">
+      <div class="kaev-home__technology-panel">
+        <div class="kaev-home__technology-intro">
+          <h2>{{ content.techTitle }}</h2>
+          <p>{{ content.techDescription }}</p>
+        </div>
+        <div class="kaev-home__technology-grid">
+          <div v-for="item in content.tech" :key="item.name" class="kaev-home__technology-item">
+            <strong>{{ item.name }}</strong>
+            <span>{{ item.detail }}</span>
+          </div>
+        </div>
       </div>
     </section>
 

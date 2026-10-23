@@ -19,6 +19,10 @@ Available sections depend on the installed release and current admin permissions
 
 For email verification and password resets, configure SMTP using the **[Mail guide](/en/guide/mail)**. The [three delivery modes](/en/guide/mail-modes) are compared separately.
 
+## Mail
+
+See **[Mail configuration](/en/guide/mail)** for SMTP setup and testing, and **[delivery mode comparison](/en/guide/mail-modes)** for synchronous, background and database-queued delivery.
+
 ## Modules
 
 See the separate **[Module catalog](/en/guide/modules)** for module descriptions, versions and pricing.

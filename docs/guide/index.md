@@ -7,6 +7,7 @@
 - [Установка CMS](/guide/installation) — VDS или обычный хостинг.
 - [Быстрый старт](/guide/getting-started) — первые настройки.
 - [Подключение игровых серверов](/guide/game-servers).
+- [Настройка почты](/guide/mail) — SMTP и [сравнение трёх режимов](/guide/mail-modes).
 - [Модули KaevCMS](/guide/modules) — Пожертвования, промокоды, ежедневные награды и техподдержка.
 - [Почта и режимы отправки](/guide/mail) — SMTP, очереди и повторные попытки.
 - [Обновления](/guide/updates) и [решение проблем](/guide/troubleshooting).

@@ -56,6 +56,17 @@ const ruSidebar = [
             "link": "/guide/game-servers"
           },
           {
+            "text": "Почта",
+            "link": "/guide/mail",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Режимы отправки",
+                "link": "/guide/mail-modes"
+              }
+            ]
+          },
+          {
             "text": "Передача предметов",
             "link": "/guide/reward-delivery"
           },
@@ -216,6 +227,17 @@ const enSidebar = [
           {
             "text": "Game servers",
             "link": "/en/guide/game-servers"
+          },
+          {
+            "text": "Mail",
+            "link": "/en/guide/mail",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Delivery modes",
+                "link": "/en/guide/mail-modes"
+              }
+            ]
           },
           {
             "text": "Item delivery",

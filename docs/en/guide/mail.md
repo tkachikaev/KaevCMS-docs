@@ -1,49 +1,53 @@
 ---
-title: "KaevCMS mail"
-description: "Connect SMTP, test email delivery and choose a delivery mode."
+title: "Mail in KaevCMS"
+description: "Configure SMTP, send a test message, and choose between the three mail delivery modes."
 ---
 
-# Mail in KaevCMS
+# Mail
 
-KaevCMS sends messages for **email verification**, **password resets** and other account notifications. You need your own or a third-party **SMTP service**.
+KaevCMS sends automatic **email verification** and **password reset** messages. You can configure the mail server in the admin panel regardless of which delivery mode you select.
 
-## Configure SMTP
+## 1. Configure SMTP
 
-1. In administration, open **Settings → Mail → Connection**.
-2. Enter the **SMTP host** and **port**. Common combinations are `587` with **STARTTLS/TLS** or `465` with **SSL/SMTPS**. Use the details supplied by your mail provider.
-3. Enter the **username**, **password** (or app password), **sender email** and **sender name**.
-4. Click **Save mail settings**.
-5. Enter your email address in the test section, click **Send test email**, and make sure the message reaches you.
+Open **Administration → Settings → Mail → Connection** and enter:
 
-The SMTP password is **encrypted at rest**. Leave the password field empty to keep an existing valid password. Run the test again whenever SMTP settings change.
+| Field | What to enter |
+| --- | --- |
+| SMTP host | Your mail server, such as `smtp.example.com`. |
+| Port | Commonly `587` with STARTTLS or `465` with SSL; confirm with your provider. |
+| Security | STARTTLS/TLS, SSL/SMTPS, or no enforced encryption. A secure connection is recommended. |
+| Username and password | Mail account credentials; some providers require an app password. |
+| From address and name | The sender displayed to players. |
+| System notification email | Optional separate field; not the SMTP login. |
 
-::: tip Deliverability
-Set up **SPF, DKIM and DMARC** for your sending domain through your email provider. Also verify `APP_URL`: verification and password-reset links use it.
+Click **Save mail settings**, then **Send test email** to an address you control. If it arrives, the SMTP connection is working.
+
+::: tip
+The SMTP password is stored encrypted. Leave the field blank to keep the existing password. A change of the application's encryption key may require you to re-enter it.
 :::
 
-## Three delivery modes
+## 2. Choose a delivery mode
 
-Open **Mail → Delivery**:
+On the **Delivery** tab, choose between:
 
-- **Synchronous** — the SMTP attempt happens during the player's web request. Simple, but slow mail servers delay the response.
-- **Asynchronous** — email is sent in a separate PHP process after the response. Fast for the player, but no durable job is stored.
-- **Asynchronous with database queue** — mail jobs are saved in the CMS database and picked up by Scheduler or a worker. Temporary SMTP failures can be retried.
+1. **Synchronous** — send during the player's request; simplest setup.
+2. **Asynchronous (background)** — respond first, then send in a separate process; no permanent queue worker needed.
+3. **Asynchronous with database queue** — persist the queued job and process it with Scheduler or a worker, with automatic retry handling.
 
-**[Compare delivery modes: speed, server load and failure risks →](/en/guide/mail-modes)**
+**[Delivery mode comparison, requirements and setup →](/en/guide/mail-modes)**
 
-::: info Mode checks
-Before first activation of an asynchronous mode, KaevCMS checks whether the server can run it. **A failed check leaves the previous mode active** (synchronous on a fresh installation). This check does not send an email.
+For a small site, **Synchronous** is the easiest starting point. For high signup volume and better preservation of pending work, use the **database queue**, provided that queue processing actually runs.
+
+## 3. Verify delivery
+
+Request a confirmation email for a test player account. If nothing arrives:
+
+- Use the **Connection** tab to verify SMTP; a successful mode capability check does not test the mail server.
+- Ensure the site's **`APP_URL`** is correct for verification and password reset links.
+- For database mode, open **Administration → System → Queues** to check pending and failed jobs.
+
+::: warning
+A “Sent” status means SMTP accepted the message for onward delivery. It **does not guarantee delivery to the inbox**: the message can still be filtered as spam or rejected downstream. SPF, DKIM and DMARC are recommended for your sender domain.
 :::
 
-## If messages are not arriving
-
-- **SMTP test fails** — verify your host, login, password, encryption and port.
-- **SMTP accepted the message but it is missing** — check spam filters, provider logs and SPF/DKIM/DMARC.
-- **Queue is not progressing** — verify Scheduler or the worker and check **System → Queues**.
-- **Job failed** — fix the underlying issue and retry the failed job from the queue administration page. An expired password reset link may require a fresh request.
-
-::: warning What “Sent” means
-A **Sent** state means the SMTP server accepted the message, not that it reached the recipient's inbox. Delivery modes primarily govern **automatic account emails**; tests and manually sent admin mail can follow separate paths.
-:::
-
-[Delivery modes](/en/guide/mail-modes) · [VPS installation](/en/guide/vds) · [Shared hosting](/en/guide/shared-hosting)
+**[Compare delivery modes →](/en/guide/mail-modes)** · [Mail and queues technical documentation](https://github.com/tkachikaev/KaevCMS/blob/main/docs/en/MAIL_AND_QUEUES.md)

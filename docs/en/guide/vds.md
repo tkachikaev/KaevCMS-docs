@@ -360,6 +360,56 @@ If `www` is not used and has no DNS record, remove the second `-d` and remove `w
 
 If no domain or A record is available yet, skip Certbot. Web Installer allows HTTP installation and only displays a warning. This is convenient for a test VDS, local IP, or private network. Configure a domain and HTTPS before opening a public website to users.
 
+### nginx security settings
+
+These settings apply to **the VDS itself**. They are useful for both new installations and already running sites.
+
+**1. Hide the nginx version.** Open the main configuration:
+
+```bash
+sudo nano /etc/nginx/nginx.conf
+```
+
+Inside the `http { ... }` section, find the existing `server_tokens` directive (change it rather than duplicating it) and set:
+
+```nginx
+server_tokens off;
+```
+
+This hides the exact nginx version in the `Server` response header and standard error pages; it **does not replace security updates**.
+
+**2. Enable HSTS only after HTTPS is verified.** First ensure the certificate works, HTTP redirects to HTTPS, and renewal passes `sudo certbot renew --dry-run`. Then edit:
+
+```bash
+sudo nano /etc/nginx/sites-available/kaevcms
+```
+
+Place this directive **inside every HTTPS `server { ... }` block** (typically using `listen 443 ssl`), including a separate HTTPS redirect for `www`, if configured:
+
+```nginx
+add_header Strict-Transport-Security "max-age=604800" always;
+```
+
+`604800` means **7 days**. Verify HTTPS across the site before extending the lifetime. **Do not** set HSTS in an HTTP server block, on an IP-only installation, or enable `includeSubDomains` / `preload` without reviewing all subdomains. An nginx `location` with its own `add_header` directives may not inherit HSTS; repeat it in that location.
+
+**3. Validate and apply:**
+
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+curl -I https://example.com/
+curl -I https://example.com/login
+curl -I https://example.com/not-a-real-page
+```
+
+Look for `Strict-Transport-Security: max-age=604800` on HTTPS responses, including 404s. Login pages and authenticated responses in the updated CMS also receive `Cache-Control: no-store`.
+
+::: warning Do not duplicate CSP in nginx
+KaevCMS sets **Content-Security-Policy (CSP)** and private-response cache protection in the application. A second nginx CSP is not required: browsers enforce both policies and may block the website, player account features, or YooMoney checkout.
+
+The application protections were added in commit [`7fb7bade`](https://github.com/tkachikaev/KaevCMS/commit/7fb7bade33d1841f1758b04ae01818de27d83ad0), **after release 0.53.1**. The installed CMS build must include this commit or a later equivalent fix for them to apply.
+:::
+
 ## 11. Run the Web Installer
 
 With a domain and certificate, open:

@@ -1,34 +1,42 @@
 ---
 title: "Donations → Providers → YooMoney"
-description: "Quick guide to configuring YooMoney payment notifications in KaevCMS."
+description: "Set up YooMoney in KaevCMS and verify HTTP notifications using the Test button."
 ---
 
 # Connect YooMoney
 
-YooMoney lets players purchase wallet coins in KaevCMS. **KaevCMS generates the notification URL for you** — just copy it to the YooMoney wallet settings.
+YooMoney lets players purchase wallet coins in KaevCMS. **KaevCMS generates the notification URL** — copy it into your YooMoney wallet settings.
 
-## Setup
+## Connect and test
 
-1. In KaevCMS administration, open **Donations → Settings** and configure an active **RUB coin price**.
-2. Open **Payment systems** and choose **Configure** for **YooMoney**.
-3. In [YooMoney HTTP notification settings](https://yoomoney.ru/document/http-uvedomleniya), **enable HTTP notifications** and paste the **YooMoney notification URL** displayed in KaevCMS.
-4. In YooMoney, choose **Show secret** and copy the notification secret. Back in KaevCMS, enter the **YooMoney wallet number** and **this secret**.
-5. Select **Accept payments through YooMoney** and **Save settings**.
+1. In KaevCMS administration, open **Donations → Settings** and set an active **RUB coin price**.
+2. Go to **Donations → Payment systems → YooMoney**.
+3. In [YooMoney HTTP notification settings](https://yoomoney.ru/document/http-uvedomleniya), enable notifications and paste the **YooMoney notification URL** displayed in KaevCMS.
+4. In YooMoney, choose **Show secret**. Enter your **wallet number** and the **notification secret** in KaevCMS. If a secret is already saved, you can leave its field blank.
+5. To make payments available to players immediately, select **Accept payments through YooMoney**.
+6. Click **Test** next to the notification URL in KaevCMS. A waiting dialog opens.
+7. **While the dialog is open**, return to YooMoney and click **Test** (Russian UI: **«Протестировать»**) in its HTTP notification settings.
 
-**Done!** Players can pay through YooMoney. The provider sends a notification to the configured URL; KaevCMS validates the payment and credits wallet coins.
+When KaevCMS shows **Notification received**, the URL is reachable and the signature is correct. **KaevCMS saves the settings automatically** — you do not need to click Save separately after a successful test.
 
-::: tip No manual code changes
-You do not need to create a callback endpoint, edit CMS files or run commands. After saving, the secret is hidden; leave the field blank to keep the saved value.
+::: tip What does Test check?
+It verifies the incoming test notification **and its signature secret**. No money is transferred and no wallet coins are credited. The dialog waits for **up to five minutes**. Real payments continue to be processed normally.
 :::
 
-## Test the setup
+## If the test fails
 
-Make a **small real payment** from a player account and check that the coins arrive after verification.
+- **Secret mismatch** — verify that YooMoney and KaevCMS use the same notification secret.
+- **Notification not received** — check the URL, enabled HTTP notifications, and public website access, then choose **Retry**.
+- **Could not start test** — enter a notification secret in KaevCMS or save it in the settings first.
 
-If payments cannot be enabled, KaevCMS lists the **readiness checks** that need attention, such as a RUB price, wallet credentials, HTTPS or production mode.
+If real payments cannot be enabled, KaevCMS shows what needs attention, such as an active RUB rate, HTTPS, credentials, or production mode.
 
-::: warning Real payments require a public site
-Your site must be reachable over **public HTTPS**. YooMoney cannot deliver notifications to `localhost` or `127.0.0.1`. **Returning from a checkout page is not payment confirmation**; crediting requires a verified notification. Keep the notification secret private.
+## Verify a real payment
+
+After the notification test passes, you can make a **small real payment** from a player account and confirm that wallet coins are credited.
+
+::: warning Real payments need public HTTPS
+Your site must be reachable via **public HTTPS**. YooMoney cannot send notifications to `localhost` or `127.0.0.1`. Returning from the payment page **does not confirm payment**; wallet coins are credited only after verification. Keep the notification secret private.
 :::
 
-[Official YooMoney HTTP notification help](https://yoomoney.ru/document/http-uvedomleniya) · [Back to Donations](/en/guide/donations)
+[YooMoney HTTP notification documentation](https://yoomoney.ru/document/http-uvedomleniya) · [Back to Donations](/en/guide/donations)

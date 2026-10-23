@@ -58,6 +58,17 @@ const ruSidebar = [
           {
             "text": "Передача предметов",
             "link": "/guide/reward-delivery"
+          },
+          {
+            "text": "Почта",
+            "link": "/guide/mail",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Режимы отправки",
+                "link": "/guide/mail-modes"
+              }
+            ]
           }
         ]
       },
@@ -209,6 +220,17 @@ const enSidebar = [
           {
             "text": "Item delivery",
             "link": "/en/guide/reward-delivery"
+          },
+          {
+            "text": "Mail",
+            "link": "/en/guide/mail",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Delivery modes",
+                "link": "/en/guide/mail-modes"
+              }
+            ]
           }
         ]
       },

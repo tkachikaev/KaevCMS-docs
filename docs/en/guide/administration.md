@@ -15,6 +15,10 @@ KaevCMS contains functionality for:
 
 Available sections depend on the installed release and current admin permissions.
 
+## Mail and notifications
+
+For email verification and password resets, configure SMTP using the **[Mail guide](/en/guide/mail)**. The [three delivery modes](/en/guide/mail-modes) are compared separately.
+
 ## Modules
 
 See the separate **[Module catalog](/en/guide/modules)** for module descriptions, versions and pricing.

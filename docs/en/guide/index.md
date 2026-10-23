@@ -8,6 +8,7 @@ These guides cover installing and configuring KaevCMS. **The left-hand documenta
 - [Quick start](/en/guide/getting-started).
 - [Connect game servers](/en/guide/game-servers).
 - [Modules](/en/guide/modules) — Donations, Promo Codes, Daily Rewards, Support Tickets.
+- [Mail and delivery modes](/en/guide/mail) — SMTP, queues and retries.
 - [Updates](/en/guide/updates) and [troubleshooting](/en/guide/troubleshooting).
 
 The [module catalog](/en/guide/modules) still provides visual cards, while the left navigation lists all module guides.

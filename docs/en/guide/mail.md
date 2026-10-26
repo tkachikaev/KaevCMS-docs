@@ -38,6 +38,29 @@ On the **Delivery** tab, choose between:
 
 For a small site, **Synchronous** is the easiest starting point. For high signup volume and better preservation of pending work, use the **database queue**, provided that queue processing actually runs.
 
+## Setting up Cron in Plesk
+
+**Asynchronous mail with a database queue** needs a working scheduler unless a separate queue worker is already configured.
+
+1. Open **Plesk → Websites & Domains → Scheduled Tasks**.
+2. Create a task of type **Run a PHP script**.
+3. Enter the following settings:
+
+| Setting | Value |
+| --- | --- |
+| Script path | `httpdocs/kaevcms-core/artisan` |
+| Arguments | `schedule:run` |
+| PHP version | The same version used by your website |
+| Schedule | Every minute (`* * * * *`) |
+
+4. Enable the task and save it.
+5. Click **Run Now** to test it.
+6. In KaevCMS administration, open **Mail → Delivery** and click **Check cron** to confirm the scheduler runs automatically.
+
+::: tip
+The path to `artisan` depends on where KaevCMS is installed. Replace the example path if needed. Once cron is running, queued database emails are processed automatically as long as SMTP and the queue are working.
+:::
+
 ## 3. Verify delivery
 
 Request a confirmation email for a test player account. If nothing arrives:

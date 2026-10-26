@@ -7,6 +7,7 @@ These guides cover installing and configuring KaevCMS. **The left-hand documenta
 - [Install KaevCMS](/en/guide/installation) — VPS or shared hosting.
 - [Quick start](/en/guide/getting-started).
 - [Connect game servers](/en/guide/game-servers) and [Driver Builder (Beta)](/en/guide/driver-builder).
+- [Languages](/en/guide/languages) — language selection and [installing a custom language pack](/en/guide/language-pack).
 - [Mail settings](/en/guide/mail) — SMTP and [three delivery modes](/en/guide/mail-modes).
 - [Modules](/en/guide/modules) — Donations, Promo Codes, Daily Rewards, Support Tickets.
 - [Updates](/en/guide/updates) and [troubleshooting](/en/guide/troubleshooting).

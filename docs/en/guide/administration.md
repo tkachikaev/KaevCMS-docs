@@ -15,6 +15,10 @@ KaevCMS contains functionality for:
 
 Available sections depend on the installed release and current admin permissions.
 
+## Languages
+
+Russian and English are included. Use **[Language settings](/en/guide/languages)** to enable installed packs and select default and fallback languages. See **[How to add a language pack](/en/guide/language-pack)** for the file structure and activation steps.
+
 ## Mail and notifications
 
 For email verification and password resets, configure SMTP using the **[Mail guide](/en/guide/mail)**. The [three delivery modes](/en/guide/mail-modes) are compared separately.

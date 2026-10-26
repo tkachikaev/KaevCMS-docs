@@ -52,6 +52,17 @@ const ruSidebar = [
             "link": "/guide/administration"
           },
           {
+            "text": "Языки",
+            "link": "/guide/languages",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Добавить языковой пакет",
+                "link": "/guide/language-pack"
+              }
+            ]
+          },
+          {
             "text": "Игровые серверы",
             "link": "/guide/game-servers",
             "collapsed": true,
@@ -226,6 +237,17 @@ const enSidebar = [
           {
             "text": "Administration",
             "link": "/en/guide/administration"
+          },
+          {
+            "text": "Languages",
+            "link": "/en/guide/languages",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Add a language pack",
+                "link": "/en/guide/language-pack"
+              }
+            ]
           },
           {
             "text": "Game servers",

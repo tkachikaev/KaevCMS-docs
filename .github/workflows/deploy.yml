@@ -5,7 +5,8 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '17 * * * *'
+    # Check for new KaevCMS releases twice per hour; a push also refreshes immediately.
+    - cron: '17,47 * * * *'
 
 permissions:
   contents: read

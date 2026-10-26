@@ -24,9 +24,9 @@ Profiles can be shared with other administrators without database passwords or h
 1. Open game-server management in the administrator panel.
 2. Create a LoginServer connection and choose the relevant driver.
 3. Enter credentials for a dedicated database account with appropriate restricted rights.
-4. Test connectivity and inspect schema support. With JSON drivers, also select **Apply JSON and verify**.
-5. Add the related GameServer and repeat diagnostics.
-6. Enable public statistics and optional functions after verification.
+4. Save the LoginServer connection settings.
+5. Add the related GameServer and save its connection settings.
+6. Enable available public statistics and other features if needed.
 
 ::: warning
 Do not expose MySQL to the entire internet. Prefer a private network, firewall restrictions and dedicated database credentials.

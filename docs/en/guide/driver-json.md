@@ -21,12 +21,12 @@ The file describes **tables, columns and capabilities**, but excludes **the data
 1. Open **Servers → Drivers → Import**.
 2. Select a **`.json` file no larger than 256 KB** and confirm.
 3. The profile appears under its driver type. Adjust its table/column mappings if needed.
-4. Select it in the **LoginServer** or **GameServer** connection settings and click **Apply JSON and verify** from the server list.
+4. When configuring your **LoginServer** or **GameServer**, select the imported driver from the list.
 
 If an ID already exists, the CMS creates **a separate profile with a new ID**, leaving the original unchanged.
 
 ::: warning
-Import **does not prove compatibility** or switch any existing server connection. Verify the schema and test real game operations. **LoginServer and GameServer require separate profiles.**
+Import **does not switch an existing server connection**. Available features depend on your game database structure. **LoginServer and GameServer use separate profiles.**
 :::
 
 [Driver Builder (Beta)](/en/guide/driver-builder) · [Connect servers](/en/guide/game-servers)

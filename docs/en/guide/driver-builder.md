@@ -1,125 +1,66 @@
 ---
 title: Driver Builder (Beta)
-description: Create a JSON driver for a Lineage II Java server build without writing PHP.
+description: Create JSON drivers for Lineage II Java server builds without programming.
 ---
 
 # Driver Builder (Beta)
 
-**You no longer have to ask the KaevCMS developer to write a dedicated driver for each Java server build.** Administrators can describe their game database in a visual builder, without programming.
+**KaevCMS lets administrators configure a driver for their own Lineage II Java server build.** The visual builder maps game database tables and columns for accounts, characters and other features. No PHP code or custom SQL is needed.
 
-A driver tells the CMS where the game build stores **accounts, characters, statistics and other data**. You can save the mapping to JSON and share it with owners of the same build.
+A configured driver can be saved, edited, duplicated, **exported as JSON** or imported into another KaevCMS installation.
 
 ::: warning Beta
-The builder was introduced in KaevCMS **0.54.x** and is still being validated against real game builds. It does **not** guarantee compatibility with every Java server: currently it supports **MySQL/MariaDB** and only operations implemented by the engine. **MS SQL / PTS are not supported yet.** Start with a test database. **The feature exists in 0.54.x source code, but that does not mean an official ZIP release including it has already been published.**
+The builder was introduced in the KaevCMS **0.54.x** codebase and compatibility testing is ongoing. It targets Java builds using **MySQL/MariaDB**, but not every unusual database layout or feature is supported. **MS SQL / PTS are not supported yet.** Make sure your CMS version includes the builder.
 :::
 
-## What can be configured?
+## What can it configure?
 
-| Driver | Features |
+| Driver | Capabilities |
 | --- | --- |
-| **LoginServer** | Account tables, login and password columns, account creation, password changes and additional account fields. |
-| **GameServer** | Characters, classes and levels, online status, PvP/PK, rankings, heroes, castles, table relations and filters. |
-| **JSON profile** | Save, duplicate, export and import compatible mappings. |
+| **LoginServer** | Game account tables, login/password columns, password hash format, account creation and password changes. |
+| **GameServer** | Characters, levels, online status, PvP/PK, rankings, heroes, castles, table relations and filters. |
+| **JSON profile** | Saved mappings, copies, exports and imports across sites. |
 
-You can start from a built-in **L2J Mobius** or **RUSaCis** profile and adapt it to your database.
+Built-in profiles for **L2J Mobius** and **RUSaCis** can be used as starting points and adapted to your game database.
 
-## Create your own driver
+## Create a driver
 
-1. Open **Administration → Servers → Drivers**.
-2. Select **LoginServer** or **GameServer**, then click **Create driver**.
-3. If your database resembles a known build, use **Create from existing**; otherwise create a blank profile.
-4. Enter a name, select capabilities and choose the database encoding.
-5. Map the CMS fields to the **actual tables and columns** of your game database, such as the character-name column.
-6. For LoginServer, choose a **supported password format**. For GameServer, configure rankings, filters, heroes and castles as needed.
-7. Click **Save driver**.
+1. In administration, open **Servers → Drivers**.
+2. Select **LoginServer** or **GameServer** and click **Create driver**.
+3. Start with a blank profile or use **Create from existing**.
+4. Enter the driver name, supported features and database encoding.
+5. Map CMS fields to the tables and columns in your game database. For LoginServer, select the game password format. For GameServer, configure statistics and table relations as needed.
+6. Click **Save driver**.
 
-Saving a profile **does not modify the game database** or activate the driver on an existing connection.
+The new profile appears in the catalog and can be selected when configuring LoginServer or GameServer under **Servers**. **Saving a profile does not modify the game database or switch existing server connections.**
 
-## Apply it to a server
+## Supported game password formats
 
-1. Open the target **LoginServer** or **GameServer** under **Servers**.
-2. Select your new driver and save the connection settings.
-3. Click **Test connection**.
-4. On the server card, click **Apply JSON and verify**.
-5. KaevCMS checks the connection and required tables, columns and relations. Fix any reported errors and retry.
-6. After a successful check, test registration, actual game login, character listing and enabled features using a test account.
+The LoginServer builder supports **six formats**:
 
-::: info
-**A schema check is not a complete game test.** A password format might pass structural checks but still be rejected by your Java LoginServer. Verify real game-client login. Reapply and verify after changing the profile or connection settings.
-:::
+| Format | Profile identifier |
+| --- | --- |
+| SHA-1 encoded as Base64 | sha1_base64 |
+| BCrypt with the $2a$ prefix | bcrypt_2a |
+| SHA-1 in hexadecimal | sha1_hex |
+| MD5 in hexadecimal | md5_hex |
+| SHA-256 in hexadecimal | sha256_hex |
+| Whirlpool in hexadecimal | whirlpool_hex |
 
-## Share a driver
+Choose **the format your Java LoginServer actually uses**. You do not need to change the game's password algorithm for the CMS. Arbitrary algorithms or executable code in JSON are not supported.
 
-Export a working profile to JSON and share it. Another administrator can import it into their CMS. **Database hosts, usernames and connection passwords are excluded** from the export.
+## Import and export
 
-**[How to import and export JSON drivers →](/en/guide/driver-json)**
+Profiles can be shared as JSON files. The export includes mapping rules, **not database hosts or connection credentials**.
+
+**[How to import and export drivers →](/en/guide/driver-json)**
 
 ## Current beta limitations
 
-- **MySQL/MariaDB only**; no MS SQL / PTS yet.
-- Supported game password algorithms are **SHA-1/Base64, BCrypt `$2a---
-title: Driver Builder (Beta)
-description: Create a JSON driver for a Lineage II Java server build without writing PHP.
----
+- **MySQL/MariaDB** only; MS SQL / PTS are not available.
+- Some unusual schemas, rankings and game-specific actions are not covered by the existing mapping options.
+- The builder does not replace the separate [in-game item delivery mechanism](/en/guide/reward-delivery).
 
-# Driver Builder (Beta)
+**In short:** owners of different Java builds can configure compatibility through JSON profiles themselves. Available features depend on each build's database structure.
 
-**You no longer have to ask the KaevCMS developer to write a dedicated driver for each Java server build.** Administrators can describe their game database in a visual builder, without programming.
-
-A driver tells the CMS where the game build stores **accounts, characters, statistics and other data**. You can save the mapping to JSON and share it with owners of the same build.
-
-::: warning Beta
-The builder was introduced in KaevCMS **0.54.x** and is still being validated against real game builds. It does **not** guarantee compatibility with every Java server: currently it supports **MySQL/MariaDB** and only operations implemented by the engine. **MS SQL / PTS are not supported yet.** Start with a test database. **The feature exists in 0.54.x source code, but that does not mean an official ZIP release including it has already been published.**
-:::
-
-## What can be configured?
-
-| Driver | Features |
-| --- | --- |
-| **LoginServer** | Account tables, login and password columns, account creation, password changes and additional account fields. |
-| **GameServer** | Characters, classes and levels, online status, PvP/PK, rankings, heroes, castles, table relations and filters. |
-| **JSON profile** | Save, duplicate, export and import compatible mappings. |
-
-You can start from a built-in **L2J Mobius** or **RUSaCis** profile and adapt it to your database.
-
-## Create your own driver
-
-1. Open **Administration → Servers → Drivers**.
-2. Select **LoginServer** or **GameServer**, then click **Create driver**.
-3. If your database resembles a known build, use **Create from existing**; otherwise create a blank profile.
-4. Enter a name, select capabilities and choose the database encoding.
-5. Map the CMS fields to the **actual tables and columns** of your game database, such as the character-name column.
-6. For LoginServer, choose a **supported password format**. For GameServer, configure rankings, filters, heroes and castles as needed.
-7. Click **Save driver**.
-
-Saving a profile **does not modify the game database** or activate the driver on an existing connection.
-
-## Apply it to a server
-
-1. Open the target **LoginServer** or **GameServer** under **Servers**.
-2. Select your new driver and save the connection settings.
-3. Click **Test connection**.
-4. On the server card, click **Apply JSON and verify**.
-5. KaevCMS checks the connection and required tables, columns and relations. Fix any reported errors and retry.
-6. After a successful check, test registration, actual game login, character listing and enabled features using a test account.
-
-::: info
-**A schema check is not a complete game test.** A password format might pass structural checks but still be rejected by your Java LoginServer. Verify real game-client login. Reapply and verify after changing the profile or connection settings.
-:::
-
-## Share a driver
-
-Export a working profile to JSON and share it. Another administrator can import it into their CMS. **Database hosts, usernames and connection passwords are excluded** from the export.
-
-**[How to import and export JSON drivers →](/en/guide/driver-json)**
-
-## Current beta limitations
-
-- **MySQL/MariaDB only**; no MS SQL / PTS yet.
-, SHA-1/MD5/SHA-256/Whirlpool (hex)**, with **no executable custom code**. Account creation also requires a **unique login index** in the game database.
-- Some unusual schemas and game-specific operations may require changes to the generic engine.
-- The builder does not replace the [reward delivery queue](/en/guide/reward-delivery) for actual in-game item delivery.
-
-**In short:** owners of many Java builds can now adapt KaevCMS independently, but actual compatibility still needs testing per database and feature.
-
-[Connect game servers](/en/guide/game-servers) · [Import and export JSON](/en/guide/driver-json) · [Technical guide](https://github.com/tkachikaev/KaevCMS/blob/main/docs/en/UNIVERSAL_DRIVERS.md)
+[Connecting game servers](/en/guide/game-servers) · [Import and export JSON](/en/guide/driver-json) · [Technical reference](https://github.com/tkachikaev/KaevCMS/blob/main/docs/en/UNIVERSAL_DRIVERS.md)

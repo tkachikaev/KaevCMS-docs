@@ -24,7 +24,7 @@ const content = computed(() => isEnglish.value ? {
   ],
   features: [
     { icon: 'puzzle', title: 'Modules and customization', description: 'Optional modules, public website and player-account themes, and multilingual content.', action: 'Explore modules', href: '/en/guide/modules', artwork: 'modules' },
-    { icon: 'gamepad', title: 'Lineage II integration', description: 'Separate LoginServer and GameServer connections, compatibility drivers and database diagnostics.', action: 'Connect a server', href: '/en/guide/game-servers', artwork: 'game' },
+    { icon: 'gamepad', title: 'Lineage II integration', description: 'Separate LoginServer/GameServer connections and JSON Driver Builder (Beta) for compatible Java builds.', action: 'Connect a server', href: '/en/guide/game-servers', artwork: 'game' },
     { icon: 'person', title: 'Player account area', description: 'Game accounts, characters, Web Inventory and other build-dependent features.', action: 'Explore features', href: '/en/guide/overview', artwork: 'account' }
   ],
   techTitle: 'Built on proven technologies',
@@ -60,7 +60,7 @@ const content = computed(() => isEnglish.value ? {
   ],
   features: [
     { icon: 'puzzle', title: 'Модули и настройка', description: 'Расширяемая система модулей, оформление публичного сайта и личного кабинета, локализация.', action: 'Смотреть все модули', href: '/guide/modules', artwork: 'modules' },
-    { icon: 'gamepad', title: 'Подключение Lineage II', description: 'Раздельные подключения LoginServer и GameServer, поддержка драйверов и диагностика игровых баз.', action: 'Подключить сервер', href: '/guide/game-servers', artwork: 'game' },
+    { icon: 'gamepad', title: 'Подключение Lineage II', description: 'LoginServer и GameServer, конструктор JSON-драйверов (бета) для Java-сборок на MySQL/MariaDB.', action: 'Подключить сервер', href: '/guide/game-servers', artwork: 'game' },
     { icon: 'person', title: 'Личный кабинет игрока', description: 'Игровые аккаунты, персонажи, веб-инвентарь и другие функции, доступные с учётом сборки сервера.', action: 'Возможности', href: '/guide/overview', artwork: 'account' }
   ],
   techTitle: 'Технологии KaevCMS',

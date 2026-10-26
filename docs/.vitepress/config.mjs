@@ -53,7 +53,21 @@ const ruSidebar = [
           },
           {
             "text": "Игровые серверы",
-            "link": "/guide/game-servers"
+            "link": "/guide/game-servers",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Конструктор драйверов (бета)",
+                "link": "/guide/driver-builder",
+                "collapsed": true,
+                "items": [
+                  {
+                    "text": "Импорт и экспорт JSON",
+                    "link": "/guide/driver-json"
+                  }
+                ]
+              }
+            ]
           },
           {
             "text": "Почта",
@@ -69,17 +83,6 @@ const ruSidebar = [
           {
             "text": "Передача предметов",
             "link": "/guide/reward-delivery"
-          },
-          {
-            "text": "Почта",
-            "link": "/guide/mail",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "Режимы отправки",
-                "link": "/guide/mail-modes"
-              }
-            ]
           }
         ]
       },
@@ -226,7 +229,21 @@ const enSidebar = [
           },
           {
             "text": "Game servers",
-            "link": "/en/guide/game-servers"
+            "link": "/en/guide/game-servers",
+            "collapsed": true,
+            "items": [
+              {
+                "text": "Driver Builder (Beta)",
+                "link": "/en/guide/driver-builder",
+                "collapsed": true,
+                "items": [
+                  {
+                    "text": "Import and export JSON",
+                    "link": "/en/guide/driver-json"
+                  }
+                ]
+              }
+            ]
           },
           {
             "text": "Mail",
@@ -242,17 +259,6 @@ const enSidebar = [
           {
             "text": "Item delivery",
             "link": "/en/guide/reward-delivery"
-          },
-          {
-            "text": "Mail",
-            "link": "/en/guide/mail",
-            "collapsed": true,
-            "items": [
-              {
-                "text": "Delivery modes",
-                "link": "/en/guide/mail-modes"
-              }
-            ]
           }
         ]
       },
@@ -352,7 +358,6 @@ const enSidebar = [
     ]
   }
 ]
-
 export default defineConfig({
   title: 'KaevCMS',
   base: '/KaevCMS-docs/',

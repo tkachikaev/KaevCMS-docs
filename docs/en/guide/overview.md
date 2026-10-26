@@ -8,10 +8,12 @@ KaevCMS is an open-source CMS for Lineage II game server websites, using **Larav
 | --- | --- |
 | Public website | News, pages, multilingual content, themes and navigation |
 | Player account | Website account, linked game accounts, characters, avatars and web inventory |
-| Game integration | Separate LoginServer and GameServer database connections |
+| Game integration | Separate LoginServer/GameServer connections and [JSON Driver Builder (Beta)](/en/guide/driver-builder) |
 | Administration | Content management, server configuration, users, access roles and diagnostics |
 | Modules | Optional features such as Daily Rewards |
 | Operations | Notifications, audit logging, diagnostics and updates |
+
+**New (Beta):** administrators can configure drivers for MySQL/MariaDB Java builds and share profiles as JSON. [Learn how →](/en/guide/driver-builder)
 
 Capabilities vary by **CMS version**, driver and game database schema. Not every game build supports every feature.
 

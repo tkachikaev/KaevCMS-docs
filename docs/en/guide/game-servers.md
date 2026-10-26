@@ -9,14 +9,22 @@ KaevCMS stores website data in its own database and uses **separate external con
 - **Drivers**: schema-specific compatibility.
 - **Diagnostics**: connection and database schema checks without exposing credentials.
 
-The published code includes the **L2J Mobius** family and a legacy LoginServer variant. Compatibility with other builds depends on release and database structure, not just a chronicle label. Review the [release notes](https://github.com/tkachikaev/KaevCMS/releases).
+Built-in drivers support **L2J Mobius** and **RUSaCis**. The **[JSON Driver Builder (Beta)](/en/guide/driver-builder)** lets administrators map database tables and columns for other Java builds **without writing a PHP driver**. The builder currently targets **MySQL/MariaDB**, and each game build still needs compatibility tests.
+
+## Driver Builder (Beta)
+
+If your build is not in the built-in list, open **Servers → Drivers** to create a custom LoginServer or GameServer JSON profile.
+
+**[Create and activate a driver](/en/guide/driver-builder)** · **[Import and export JSON](/en/guide/driver-json)**
+
+Profiles can be shared with other administrators without database passwords or hosts.
 
 ## Setup sequence
 
 1. Open game-server management in the administrator panel.
 2. Create a LoginServer connection and choose the relevant driver.
 3. Enter credentials for a dedicated database account with appropriate restricted rights.
-4. Test connectivity and inspect schema support.
+4. Test connectivity and inspect schema support. With JSON drivers, also select **Apply JSON and verify**.
 5. Add the related GameServer and repeat diagnostics.
 6. Enable public statistics and optional functions after verification.
 

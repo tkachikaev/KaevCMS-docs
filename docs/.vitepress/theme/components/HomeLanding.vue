@@ -30,9 +30,9 @@ const content = computed(() => isEnglish.value ? {
   techTitle: 'Built on proven technologies',
   techDescription: 'A modern foundation for a Lineage II website, compatible with VPS and shared hosting.',
   tech: [
-    { name: 'PHP 8.3+', detail: 'Server-side runtime' },
-    { name: 'Laravel', detail: 'Application framework' },
-    { name: 'Livewire', detail: 'Interactive interfaces' },
+    { name: 'PHP 8.3–8.5', detail: 'Server-side runtime' },
+    { name: 'Laravel 13', detail: 'Application framework' },
+    { name: 'Livewire 4', detail: 'Interactive interfaces' },
     { name: 'MySQL / MariaDB', detail: 'Database engine' }
   ],
   moreTitle: 'Everything for your server website',
@@ -66,9 +66,9 @@ const content = computed(() => isEnglish.value ? {
   techTitle: 'Технологии KaevCMS',
   techDescription: 'Современный технологический стек для сайта Lineage II. Подходит для VDS и обычного виртуального хостинга.',
   tech: [
-    { name: 'PHP 8.3+', detail: 'Серверная платформа' },
-    { name: 'Laravel', detail: 'Основа CMS' },
-    { name: 'Livewire', detail: 'Интерактивные интерфейсы' },
+    { name: 'PHP 8.3–8.5', detail: 'Серверная платформа' },
+    { name: 'Laravel 13', detail: 'Основа CMS' },
+    { name: 'Livewire 4', detail: 'Интерактивные интерфейсы' },
     { name: 'MySQL / MariaDB', detail: 'База данных' }
   ],
   moreTitle: 'Всё для сайта игрового сервера',

@@ -115,6 +115,14 @@ const ruSidebar = [
                   {
                     "text": "ЮMoney",
                     "link": "/guide/donations-yoomoney"
+                  },
+                  {
+                    "text": "FreeKassa",
+                    "link": "/guide/donations-freekassa"
+                  },
+                  {
+                    "text": "PayPal",
+                    "link": "/guide/donations-paypal"
                   }
                 ]
               },
@@ -302,6 +310,14 @@ const enSidebar = [
                   {
                     "text": "YooMoney",
                     "link": "/en/guide/donations-yoomoney"
+                  },
+                  {
+                    "text": "FreeKassa",
+                    "link": "/en/guide/donations-freekassa"
+                  },
+                  {
+                    "text": "PayPal",
+                    "link": "/en/guide/donations-paypal"
                   }
                 ]
               },

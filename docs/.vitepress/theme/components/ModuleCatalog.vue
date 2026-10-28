@@ -14,14 +14,14 @@ const modules = [
     id: 'donations', version: '1.16.1',
     ru: {
       name: 'Пожертвования',
-      description: 'Игрок пополняет баланс монет на сайте через ЮMoney. При включённом обмене монеты можно потратить на игровые предметы, которые попадут в веб-инвентарь.',
-      example: 'Принимать пополнения и обменивать монеты на награды.',
+      description: 'Игрок пополняет баланс монет через подключённую платёжную систему. Монеты также можно обменивать на игровые предметы через веб-инвентарь.',
+      example: 'Подключать платёжные системы и обменивать монеты на награды.',
       short: 'Пополнение монет и обмен на предметы'
     },
     en: {
       name: 'Donations',
-      description: 'Players top up their website coin balance via YooMoney. When enabled, coins can be exchanged for game items delivered to Web Inventory.',
-      example: 'Accept top-ups and let players exchange coins for rewards.',
+      description: 'Players top up their coin balance through a configured payment provider. Coins can also be exchanged for game items through Web Inventory.',
+      example: 'Connect payment providers and let players exchange coins for rewards.',
       short: 'Coin top-ups and item exchange'
     }
   },

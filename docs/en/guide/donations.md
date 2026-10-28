@@ -1,35 +1,35 @@
 ---
-title: "Donations — payments module"
-description: "Learn about KaevCMS Donations: player wallet, payment providers and coin exchange for game items."
+title: "Donations — wallet top-ups"
+description: "KaevCMS wallet coins, payment providers and exchanging coins for game items."
 ---
 
 # Donations
 
-**Donations** lets players top up their KaevCMS wallet. Players pay through a configured provider, and KaevCMS credits coins **after the payment is verified**.
+The **Donations** module lets players top up their KaevCMS wallet through configured payment providers. Coins are credited **only after payment verification**.
 
-The module can also exchange CMS coins for in-game items through **Web Inventory**.
+Coins can also be exchanged for game items through **Web Inventory**.
 
 ## Getting started
 
-1. Enable **Donations** in the KaevCMS administration panel.
-2. Open **Settings** in the module and configure a coin price under **Currencies and prices**.
-3. Connect a payment service under **Payment systems**.
-4. Test the payment flow with a small real payment.
+1. Enable **Donations** in the administration panel.
+2. Set the coin price under **Currencies and prices**.
+3. Open **Payment systems**, configure your provider and click **Test**.
+4. Verify the full flow with a controlled payment before opening checkout to players.
 
-## [Providers](/en/guide/donations-providers)
+## [Payment providers](/en/guide/donations-providers)
 
-A provider processes a player's payment and sends a payment notification to KaevCMS.
+- **[YooMoney](/en/guide/donations-yoomoney)** — wallet credentials and notification setup.
+- **[FreeKassa](/en/guide/donations-freekassa)** — shop setup, Test and Live modes.
+- **[PayPal](/en/guide/donations-paypal)** — PayPal Business and Sandbox testing.
 
-### YooMoney
+::: info
+FreeKassa and PayPal availability depends on your installed KaevCMS version. Both are marked **Alpha** in the current source and require a controlled payment before production use.
+:::
 
-**YooMoney** is supported for accepting payments. Enter the wallet details, copy the callback address from KaevCMS into YooMoney settings, and enable payments.
+## [Exchange coins for game items](/en/guide/donations-exchange)
 
-**[Connect YooMoney — quick setup guide →](/en/guide/donations-yoomoney)**
+Under **Transfer coins to game**, configure the in-game item and amount awarded for one CMS coin on each GameServer.
 
-## [Exchanging coins for game items](/en/guide/donations-exchange)
+Exchanged items arrive in **Web Inventory** first. Players can then deliver them to a character through the [reward queue](/en/guide/reward-delivery).
 
-Under **Transfer coins to game**, configure the in-game item and how many items one CMS coin buys for each GameServer.
-
-Exchange results go into **Web Inventory** first. Players can then send items to a character through the [reward queue](/en/guide/reward-delivery).
-
-[Coin exchange setup](/en/guide/donations-exchange) · [Technical Donations documentation on GitHub](https://github.com/tkachikaev/KaevCMS/blob/main/docs/en/DONATIONS.md).
+[Coin exchange setup](/en/guide/donations-exchange) · [Technical Donations documentation](https://github.com/tkachikaev/KaevCMS/blob/main/docs/en/DONATIONS.md).

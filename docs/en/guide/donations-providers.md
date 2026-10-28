@@ -11,8 +11,14 @@ A **provider** processes a player's purchase of KaevCMS wallet coins. Coins are 
 
 1. Enable **Donations** and set coin prices under **Currencies and prices**.
 2. Open **Donations → Payment systems**, select a provider and click **Configure**.
-3. Enter account credentials and notification settings, then use **Test** to check the connection.
-4. Enable player payments after the tests pass.
+3. Copy the **Notification address** (the **Copy** button) into the provider's account, then enter the credentials.
+4. Use **Test** to check the connection, then switch on **Accept payments** for that provider and save.
+
+Switching a provider on is the only switch you need: KaevCMS opens payments to players when the site is ready, otherwise it says what is missing. Each provider is switched on and off independently, so you can run one or several at once. To close everything at once, disable the **Donations** module.
+
+## The Test window
+
+**Test** opens a window with a live result: a spinner while KaevCMS waits for the provider, then a green tick or a red cross. The result is stored on the server and stays until the next test, even if you close the window or the provider sends you back to the site. If no currency is selected, the window asks you to select one. FreeKassa test mode and PayPal Sandbox never credit coins and are never shown to players.
 
 ## Choose a guide
 

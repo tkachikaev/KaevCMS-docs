@@ -16,7 +16,7 @@ PayPal is marked **Alpha** in newer KaevCMS builds: full production acceptance i
 1. Open the [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/applications/) using an account linked to **PayPal Business**.
 2. Under your applications, choose **Live** and create or open a REST app. Copy its **Client ID** and **Client Secret**.
 3. Find your Business account's **Merchant ID (PayPal account ID)**. This is **not** the app's Client ID.
-4. In KaevCMS, open **Donations → Payment systems → PayPal** and enter your **Live** credentials.
+4. In KaevCMS, open **Donations → Payment systems → PayPal** and enter your **Live** credentials under **Connection details** (Live Client ID, Client Secret, Webhook ID and Merchant ID). Sandbox credentials are entered separately in the **Test** window.
 5. Select currencies with configured prices under **Donations → Currencies and prices**, then save.
 
 Secrets are stored encrypted. Leave an already saved secret field blank to keep the existing value.
@@ -34,16 +34,18 @@ Secrets are stored encrypted. Leave an already saved secret field blank to keep 
 ## 3. Test with the Test button
 
 1. Prepare a **Sandbox app** and Sandbox **Business** (seller) and **Personal** (buyer) test accounts in PayPal. [Sandbox guide](https://developer.paypal.com/sandbox-testing/overview/).
-2. Click **Test** next to the notification URL in KaevCMS. In the dialog, expand **Sandbox credentials**, enter Sandbox Client ID, Client Secret and Webhook ID, then save.
-3. Select **Sandbox** and click **Check credentials**. This confirms PayPal API access, **not** a completed payment.
-4. Select a currency and amount in the same dialog, click **Open PayPal Sandbox**, and approve the purchase using the **buyer** test account.
-5. After returning, if the status is **APPROVED**, click **Confirm Sandbox Capture**. Check the result in your test history.
+2. Click **Test** next to the notification address in KaevCMS. In the dialog, expand **Test credentials (Sandbox)**, enter Sandbox Client ID, Client Secret and Webhook ID, then save.
+3. Choose **Test credentials (Sandbox)** in the check list and click **Check credentials**. This confirms PayPal API access, **not** a completed payment. The same list can check your **Live credentials (Live)**.
+4. Make sure a currency is ticked on the settings page; otherwise the dialog tells you to select one. Then choose a currency and amount, click **Open PayPal Sandbox**, and approve the purchase using the **buyer** test account.
+5. After returning, if the status is **APPROVED**, click **Confirm Sandbox Capture**.
+
+The result block in the dialog shows a spinner while KaevCMS waits, then a green tick (**Test passed: PayPal confirmed the payment**) or a red cross. It is kept on the server until the next test.
 
 **Sandbox uses no real money and never credits wallet coins.** Returning from the approval page alone is not evidence of completed Capture.
 
 ## 4. Enable Live
 
-Check your **Live** credentials and webhook separately. After a small real control payment, enable **PayPal payments**, save, and make sure Donations allows players to pay.
+Check your **Live** credentials and webhook separately. After a small real control payment, switch on **Accept payments through PayPal** and save. KaevCMS opens payments to players itself when the site is ready; if not, the page lists what is missing (HTTPS, production mode, a suitable database, a coin price for the currency). Switching PayPal off does not affect other providers.
 
 If a transaction's outcome is uncertain, use **Check with PayPal API** on its administration page. This does not initiate another charge. Refunds and disputes generate administrator notices, but do not automatically debit wallet coins.
 

@@ -9,6 +9,7 @@
 - [Подключение игровых серверов](/guide/game-servers) и [конструктор драйверов (бета)](/guide/driver-builder).
 - [Языки](/guide/languages) — выбор языка и [установка собственного языкового пакета](/guide/language-pack).
 - [Настройка почты](/guide/mail) — SMTP и [сравнение трёх режимов](/guide/mail-modes).
+- [Социальная авторизация](/guide/social-auth) — вход через Google, Яндекс ID, VK ID, Telegram, Discord и Facebook.
 - [Модули KaevCMS](/guide/modules) — Пожертвования, промокоды, ежедневные награды и техподдержка.
 - [Обновления](/guide/updates) и [решение проблем](/guide/troubleshooting).
 

@@ -15,6 +15,10 @@ KaevCMS contains functionality for:
 
 Available sections depend on the installed release and current admin permissions.
 
+## Social sign-in
+
+See the **[social sign-in guide](/en/guide/social-auth)** to configure Google, Yandex ID, VK ID, Telegram, Discord and Facebook and learn how existing players link accounts. Each provider is configured and enabled independently.
+
 ## Languages
 
 Russian and English are included. Use **[Language settings](/en/guide/languages)** to enable installed packs and select default and fallback languages. See **[How to add a language pack](/en/guide/language-pack)** for the file structure and activation steps.

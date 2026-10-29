@@ -52,6 +52,19 @@ const ruSidebar = [
             "link": "/guide/administration"
           },
           {
+            "text": "Социальная авторизация",
+            "link": "/guide/social-auth",
+            "collapsed": true,
+            "items": [
+              { "text": "Google", "link": "/guide/social-auth-google" },
+              { "text": "Яндекс ID", "link": "/guide/social-auth-yandex" },
+              { "text": "VK ID", "link": "/guide/social-auth-vk" },
+              { "text": "Telegram", "link": "/guide/social-auth-telegram" },
+              { "text": "Discord", "link": "/guide/social-auth-discord" },
+              { "text": "Facebook", "link": "/guide/social-auth-facebook" }
+            ]
+          },
+          {
             "text": "Языки",
             "link": "/guide/languages",
             "collapsed": true,
@@ -245,6 +258,19 @@ const enSidebar = [
           {
             "text": "Administration",
             "link": "/en/guide/administration"
+          },
+          {
+            "text": "Social sign-in",
+            "link": "/en/guide/social-auth",
+            "collapsed": true,
+            "items": [
+              { "text": "Google", "link": "/en/guide/social-auth-google" },
+              { "text": "Yandex ID", "link": "/en/guide/social-auth-yandex" },
+              { "text": "VK ID", "link": "/en/guide/social-auth-vk" },
+              { "text": "Telegram", "link": "/en/guide/social-auth-telegram" },
+              { "text": "Discord", "link": "/en/guide/social-auth-discord" },
+              { "text": "Facebook", "link": "/en/guide/social-auth-facebook" }
+            ]
           },
           {
             "text": "Languages",

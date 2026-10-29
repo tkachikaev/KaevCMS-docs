@@ -4,6 +4,7 @@ import ReleaseCatalog from './components/ReleaseCatalog.vue'
 import AssetGallery from './components/AssetGallery.vue'
 import HomeLanding from './components/HomeLanding.vue'
 import ThemeLayout from './ThemeLayout.vue'
+import SocialProviderIcon from './components/SocialProviderIcon.vue'
 import './custom.css'
 import './releases.css'
 import './gallery.css'
@@ -17,5 +18,6 @@ export default {
     app.component('ReleaseCatalog', ReleaseCatalog)
     app.component('AssetGallery', AssetGallery)
     app.component('HomeLanding', HomeLanding)
+    app.component('SocialProviderIcon', SocialProviderIcon)
   }
 }

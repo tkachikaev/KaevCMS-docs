@@ -1,32 +1,60 @@
 ---
 title: "Connect Telegram — KaevCMS"
-description: "Simple setup guide for Telegram player sign-in."
+description: "Step-by-step Telegram OIDC sign-in setup with BotFather."
 ---
 
 # Connect Telegram
 
 <SocialProviderIcon name="telegram" :size="48" />
 
-The website administrator performs these steps once.
+Players can sign in to your website with Telegram. You need a bot and the **Client ID / Client Secret** issued by BotFather.
 
-## Setup steps
+## 1. Create a bot
 
-1. Create a bot with [@BotFather](https://t.me/BotFather) and open its **Login Widget** settings.
-2. Under **Allowed URLs**, register your website origin, e.g. `https://your-domain`, and the **full KaevCMS callback URL**. Choose **RS256** signing.
-3. Enter the **Client ID** and **Client Secret** provided by BotFather in KaevCMS and save.
+1. Open [@BotFather](https://t.me/BotFather) in Telegram.
+2. Send **`/newbot`**, choose a display name and a unique username ending in `bot`. If you already have a bot, use **`/mybots`**.
+3. Open the **BotFather mini app** using **Open App**, then select your bot.
+4. Find **Login Widget / Web Login**. These are the new Telegram OIDC settings, **not** the **Domain** button in the regular Bot Settings chat menu.
 
-::: tip Where is the Callback URL?
-Under **Administration → Settings → Registration → Social sign-in → Telegram**, click **Copy** beside the displayed callback URL. Register it unchanged. Production needs HTTPS. **Save credentials and enable sign-in separately.**
+::: tip
+The **HTTP API Token** you receive when creating the bot is **not the Client Secret** used for website sign-in. Do not enter the bot API token into KaevCMS social sign-in settings or share it publicly.
 :::
 
-## Player experience
+## 2. Register your website URLs
 
-Once enabled, Telegram appears among the available sign-in methods. Existing CMS users should sign in normally first, then open **Account → Security** to link the provider. **Matching emails never link accounts automatically.**
+1. In KaevCMS administration, open **Settings → Registration → Social sign-in → Telegram → Configure**.
+2. Use **Copy** next to **Redirect / Callback URL**.
+3. In the BotFather mini app, under **Login Widget / Web Login**, add these **Allowed URLs**:
+   - **Website origin:** `https://example.com`
+   - **Callback URL:** `https://example.com/auth/social/telegram/callback`
+4. Replace the examples with **your domain and the exact callback URL copied from KaevCMS**. Choose **RS256** signing (normally the default).
 
 ::: warning
-**Current `Social-Auth` branch limitation:** Telegram cannot be enabled until an approved JWT/JWKS verification library is installed. Credentials alone are insufficient. Telegram OIDC does not return an email, so players must provide and verify one in KaevCMS. This is OIDC, not the legacy iframe login widget.
+Both URLs must be registered with Telegram. Production needs a correct HTTPS **`APP_URL`**. Even a small mismatch in the callback URL can prevent sign-in.
 :::
 
-If sign-in fails, check Client ID, the secret where required, the exact callback URL and app permissions. Make sure mail delivery and new account registration are configured as needed.
+## 3. Enable Telegram in KaevCMS
 
-[Telegram developer dashboard](https://t.me/BotFather) · [All social sign-in providers](/en/guide/social-auth).
+1. Copy the **Client ID** and **Client Secret** shown under **Login Widget / Web Login**.
+2. Enter them into the matching Telegram fields in KaevCMS.
+3. Click **Save provider settings**.
+4. Separately turn on **Enable sign-in** for Telegram.
+5. Sign out and test **Sign in with Telegram** from the login page.
+
+**Done:** after a successful Telegram authorization, the player returns to your KaevCMS website.
+
+## First-time registration and account linking
+
+Telegram does not provide an email address in the KaevCMS OIDC flow. New players therefore **enter an email, confirm it through a KaevCMS message and choose a website username**. Make sure [mail delivery](/en/guide/mail) works.
+
+Existing players should **sign in normally first**, then open **Account → Security** to link Telegram. **Accounts are never merged automatically by email.**
+
+## Troubleshooting
+
+- Check **Allowed URLs**, the exact callback URL, HTTPS and `APP_URL`.
+- Use the **Client Secret from Login Widget**, not the bot API token.
+- Make sure Telegram is enabled in KaevCMS and **RS256** is selected.
+- If KaevCMS reports that **JWT/JWKS** support is missing, update to a CMS build that includes Telegram OIDC support. The current **`Social-Auth`** branch includes **`firebase/php-jwt ^7.2`**. Never bypass token verification.
+- New registrations require enabled website registration and working email delivery.
+
+**Links:** [@BotFather](https://t.me/BotFather) · [Official Telegram Login guide](https://core.telegram.org/bots/telegram-login) · [All providers](/en/guide/social-auth).

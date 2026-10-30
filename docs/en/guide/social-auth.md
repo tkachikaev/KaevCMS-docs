@@ -39,8 +39,8 @@ This feature is implemented in the application's [Social-Auth branch](https://gi
 | <SocialProviderIcon name="discord" :size="26" /> **Discord** | Client ID and Client Secret | [Setup guide](/en/guide/social-auth-discord) |
 | <SocialProviderIcon name="facebook" :size="26" /> **Facebook** | App ID and App Secret | [Setup guide](/en/guide/social-auth-facebook) |
 
-::: warning Telegram
-In the current branch, Telegram cannot be enabled until a verified JWT/JWKS library is approved and installed. KaevCMS displays this limitation in the administration panel.
+::: tip Telegram
+Telegram uses the new OIDC flow configured through the **BotFather mini app → Login Widget / Web Login**. The current `Social-Auth` branch includes **`firebase/php-jwt ^7.2`** for token verification. See the [Telegram setup guide](/en/guide/social-auth-telegram).
 :::
 
 ## Signing in and linking accounts

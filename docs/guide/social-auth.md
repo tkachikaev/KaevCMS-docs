@@ -39,8 +39,8 @@ description: "Настройка входа через Google, Яндекс ID, 
 | <SocialProviderIcon name="discord" :size="26" /> **Discord** | Client ID и Client Secret | [Открыть инструкцию](/guide/social-auth-discord) |
 | <SocialProviderIcon name="facebook" :size="26" /> **Facebook** | App ID и App Secret | [Открыть инструкцию](/guide/social-auth-facebook) |
 
-::: warning Telegram
-В текущей ветке Telegram ещё нельзя включить без согласованной библиотеки проверки JWT/JWKS. Приложение показывает это ограничение непосредственно в админке.
+::: tip Telegram
+Для Telegram используется новый OIDC-вход через **мини-приложение BotFather → Login Widget / Web Login**. В актуальной ветке `Social-Auth` уже добавлена библиотека **`firebase/php-jwt ^7.2`** для проверки токенов. [Пошаговая инструкция Telegram](/guide/social-auth-telegram).
 :::
 
 ## Вход и привязка аккаунтов

@@ -3,8 +3,10 @@ import { nextTick, provide } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
+import { useSidebarMotion } from './sidebar-motion.js'
 
 const { isDark } = useData()
+useSidebarMotion()
 let switching = false
 
 provide('toggle-appearance', async (event) => {

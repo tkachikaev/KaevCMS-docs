@@ -188,3 +188,29 @@
 .VPNavBar .VPNavBarTranslations { display: none !important; }
 .VPNavBar .VPNavBarExtra .group.translations { display: none !important; }
 .VPNavScreen .VPNavScreenTranslations { display: none !important; }
+
+/* Smooth nested sidebar disclosure (VitePress 1.6.4 normally uses display:none).
+   Only JS-enhanced groups opt in; without JS the standard sidebar still works. */
+.Layout .VPSidebar .VPSidebarItem.kaev-sidebar-motion > .items {
+  display: block;
+  overflow: hidden;
+}
+
+.Layout .VPSidebar .VPSidebarItem.kaev-sidebar-motion.collapsed > .items {
+  height: 0;
+  opacity: 0;
+}
+
+.Layout .VPSidebar .VPSidebarItem.kaev-sidebar-motion.level-0 {
+  transition: padding-bottom 300ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.Layout .VPSidebar .VPSidebarItem.kaev-sidebar-motion:not(.collapsed) > .item > .caret {
+  color: var(--vp-c-brand-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Layout .VPSidebar .VPSidebarItem.kaev-sidebar-motion.level-0 {
+    transition: none;
+  }
+}
